@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "su/GMM89YxJIANbs7omWpPIWj6ZoboBzYd9TB4WCbBI2x0wzVz/z3Nu0OZeRFvv0TyJhHjCtAxfrqlT/+JzEIw==",
+  "dgSpecHash": "2jMn3jX+ed63HvZWiegkRk84AAN1jl8Vb+R2jy0YnzQtFeIxnelU73fthj4OvKukm3Nea9FRFrwkEszUdnPV/Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jamal\\Documents\\SCHOOL\\Q 4\\.NET\\MyApp\\MyApp\\MyApp\\MyApp\\MyApp.csproj",
+  "projectFilePath": "C:\\github\\.NET_Art-Collection\\MyApp\\MyApp\\MyApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jamal\\.nuget\\packages\\communitytoolkit.maui\\7.0.1\\communitytoolkit.maui.7.0.1.nupkg.sha512",
     "C:\\Users\\jamal\\.nuget\\packages\\communitytoolkit.maui.core\\7.0.1\\communitytoolkit.maui.core.7.0.1.nupkg.sha512",
@@ -37,7 +37,9 @@
     "C:\\Users\\jamal\\.nuget\\packages\\runtime.native.system.io.ports\\8.0.0\\runtime.native.system.io.ports.8.0.0.nupkg.sha512",
     "C:\\Users\\jamal\\.nuget\\packages\\runtime.osx-arm64.runtime.native.system.io.ports\\8.0.0\\runtime.osx-arm64.runtime.native.system.io.ports.8.0.0.nupkg.sha512",
     "C:\\Users\\jamal\\.nuget\\packages\\runtime.osx-x64.runtime.native.system.io.ports\\8.0.0\\runtime.osx-x64.runtime.native.system.io.ports.8.0.0.nupkg.sha512",
+    "C:\\Users\\jamal\\.nuget\\packages\\system.codedom\\8.0.0\\system.codedom.8.0.0.nupkg.sha512",
     "C:\\Users\\jamal\\.nuget\\packages\\system.io.ports\\8.0.0\\system.io.ports.8.0.0.nupkg.sha512",
+    "C:\\Users\\jamal\\.nuget\\packages\\system.management\\8.0.0\\system.management.8.0.0.nupkg.sha512",
     "C:\\Users\\jamal\\.nuget\\packages\\system.speech\\8.0.0-rc.2.23479.6\\system.speech.8.0.0-rc.2.23479.6.nupkg.sha512",
     "C:\\Users\\jamal\\.nuget\\packages\\xamarin.android.glide\\4.15.1.2\\xamarin.android.glide.4.15.1.2.nupkg.sha512",
     "C:\\Users\\jamal\\.nuget\\packages\\xamarin.android.glide.annotations\\4.15.1.2\\xamarin.android.glide.annotations.4.15.1.2.nupkg.sha512",
