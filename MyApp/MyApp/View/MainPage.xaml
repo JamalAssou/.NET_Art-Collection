@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"             
+             xmlns:viewmodel="clr-namespace:MyApp.ViewModel"           
+             xmlns:model="clr-namespace:MyApp.Model"
+             x:Class="MyApp.View.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30,0" Spacing="25">
+            <HorizontalStackLayout Spacing="10" Padding="10">
+                <Button Text="Add spider" 
+                        Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MainViewModel}}, Path=AddElementCommand}"
+                        HorizontalOptions="Center"
+                        BorderWidth="2" 
+                        BackgroundColor="Transparent" BorderColor="Green" TextColor="Green"
+                        IsEnabled="{Binding IsNotBusy}"/>
+                <Button Text="Load Json" 
+                        Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MainViewModel}}, Path=LoadJSONCommand}"
+                        HorizontalOptions="Center"
+                        BorderWidth="2" 
+                        BackgroundColor="Transparent" BorderColor="Green" TextColor="Green"
+                        IsEnabled="{Binding IsNotBusy}"/>
+                <Label  Text="{Binding CodeBar}"/>
+            </HorizontalStackLayout>           
+
+            <CollectionView ItemsSource="{Binding MyObservableSpiders}"
+                            SelectionMode="None">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="model:Spider">
+                        <Border StrokeThickness="4"
+                                StrokeShape="RoundRectangle 10,10,10,10"
+                                Padding="10">
+                            <Grid HeightRequest="100" ColumnDefinitions="0.5*,*">
+                                <ImageButton    Grid.Column="0"
+                                                HorizontalOptions="Start"
+                                                Source="{Binding Picture}"
+                                                Aspect="AspectFit"
+                                                HeightRequest="100"
+                                                Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MainViewModel}}, Path=GoToDetailsCommand}"
+                                                CommandParameter="{Binding Name}"/>
+                                <VerticalStackLayout Grid.Column="1" VerticalOptions="Center">
+                                    <Label  Text="{Binding Path=Name,StringFormat='   Name: {0:S2}'}" 
+                                            Style="{StaticResource SubHeadline}"
+                                            FontSize="15"
+                                            HorizontalOptions="Start"
+                                            VerticalOptions="Center"/>
+                                    <Label  Text="{Binding Path=Description,StringFormat='   Description: {0:S2}'}" 
+                                            Style="{StaticResource SubHeadline}"
+                                            FontSize="15"
+                                            HorizontalOptions="Start"
+                                            VerticalOptions="Center"/>
+                                    <Label  Text="{Binding Path=Origin,StringFormat='   Origin: {0:S2}'}" 
+                                            Style="{StaticResource SubHeadline}"
+                                            FontSize="15"
+                                            HorizontalOptions="Start"
+                                            VerticalOptions="Center"/>
+                                </VerticalStackLayout>                              
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>     
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
