@@ -28,7 +28,7 @@ public partial class DeviceOrientationService
                 }
             }
         }
-        ComPort = "COM4";
+        ComPort = "COM4"; // CHANGER LE PORT COM SELON LA MACHINE QU'ON UTILISE !!!
         try
         {
             if (!mySerialPort.IsOpen)
@@ -49,7 +49,7 @@ public partial class DeviceOrientationService
         }
         catch
         {
-            Shell.Current.DisplayAlert("Error!", "Scanner non détecté...", "OK");
+            Shell.Current.DisplayAlert("Error!", "Scanner not detected...", "OK");
         }
     }
     private void DataHandler(object sender, SerialDataReceivedEventArgs e)

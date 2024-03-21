@@ -31,44 +31,95 @@ public partial class MainViewModel : BaseViewModel
     {
         Art NewArt = new();
         NewArt.Id = 0;
-        NewArt.Name = "Joconte";
-        NewArt.Description = "The best work of art in the world";
-        NewArt.Author = "Isma";
-        NewArt.Price = "1000";
+        NewArt.Title = "La Joconde";
+        NewArt.Description = "It depicts a half-body portrait, probably of the Florentine Lisa Gherardini";
+        NewArt.Author = "Léonard de Vinci";
+        NewArt.Price = "$260m";
         NewArt.Picture = "la_joconde.jpg";
-        NewArt.Date = "2003";
+        NewArt.Year = "1503-1506";
 
         Art NewArt1 = new();
         NewArt1.Id = 1;
-        NewArt1.Name = "Tournesol";
-        NewArt1.Description = "The best work of art in the world";
-        NewArt1.Author = "Van Gogh";
-        NewArt1.Price = "1000";
-        NewArt1.Picture = "tournesol.jpg";
-        NewArt1.Date = "2003";
+        NewArt1.Title = "Les Tournesols";
+        NewArt1.Description = "It depicts bouquets of sunflowers in vases";
+        NewArt1.Author = "Vincent van Gogh";
+        NewArt1.Price = "$14.9m";
+        NewArt1.Picture = "sunflowers.jpg";
+        NewArt1.Year = "1887-1889";
 
         Art NewArt2 = new();
         NewArt2.Id = 2;
-        NewArt2.Name = "The Nightmare";
-        NewArt2.Description = "The best work of art in the world";
-        NewArt2.Author = "Jamal";
-        NewArt2.Price = "1000";
+        NewArt2.Title = "The Nightmare";
+        NewArt2.Description = "It shows a woman in deep sleep with her arms thrown below her, and with a demonic and ape-like incubus crouched on her chest";
+        NewArt2.Author = "Henry Fuseli";
+        NewArt2.Price = "$75.9m";
         NewArt2.Picture = "the_nightmare.jpg";
-        NewArt2.Date = "2003";
+        NewArt2.Year = "1781";
 
         Art NewArt3 = new();
         NewArt3.Id = 3;
-        NewArt3.Name = "The Scream";
-        NewArt3.Description = "The best work of art in the world";
-        NewArt3.Author = "Farouk";
-        NewArt3.Price = "10504";
+        NewArt3.Title = "The Scream";
+        NewArt3.Description = "Symbolizing the modern man swept away by a crisis of existential anguish";
+        NewArt3.Author = "Edvard Munch";
+        NewArt3.Price = "$119m";
         NewArt3.Picture = "the_scream.jpg";
-        NewArt3.Date = "2003";
+        NewArt3.Year = "1893-1917";
+        
+        Art NewArt4 = new();
+        NewArt3.Id = 4;
+        NewArt3.Title = "Guernica";
+        NewArt3.Description = "Powerful testimony to the horrors of the Spanish Civil War, expressing the ";
+        NewArt3.Author = "Pablo Picasso";
+        NewArt3.Price = "$200m";
+        NewArt3.Picture = "guernica.jpg";
+        NewArt3.Year = "1937";
+        
+        Art NewArt5 = new();
+        NewArt3.Id = 5;
+        NewArt3.Title = "La Nuit étoilée";
+        NewArt3.Description = "Symbolizing the modern man swept away by a crisis of existential anguish";
+        NewArt3.Author = "Vincent van Gogh";
+        NewArt3.Price = "$119m";
+        NewArt3.Picture = "la_nuit_etoilee.jpg";
+        NewArt3.Year = "1893-1917";
+        
+        Art NewArt6 = new();
+        NewArt3.Id = 6;
+        NewArt3.Title = "Les Demoiselles d'Avignon";
+        NewArt3.Description = "A revolutionary work that heralded Cubism, featuring distorted, angular figures in a brothel scene";
+        NewArt3.Author = "Pablo Picasso";
+        NewArt3.Price = "$200m";
+        NewArt3.Picture = "les_demoiselles_davignon.jpg";
+        NewArt3.Year = "1907";
+        
+        Art NewArt7 = new();
+        NewArt3.Id = 7;
+        NewArt3.Title = "La Persistance de la Mémoire";
+        NewArt3.Description = "A surreal representation of soft watches in a desert landscape, exploring the concepts of time and reality";
+        NewArt3.Author = "Salvador Dalí";
+        NewArt3.Price = "$90m";
+        NewArt3.Picture = "la_persistance_de_la_memoire.jpeg";
+        NewArt3.Year = "1931";
+
+        Art NewArt8 = new();
+        NewArt3.Id = 8;
+        NewArt3.Title = "Les Amoureux";
+        NewArt3.Description = "An intimate and moving depiction of a couple embracing in an idyllic landscape, symbolizing love and human connection";
+        NewArt3.Author = "Pierre-Auguste Renoir";
+        NewArt3.Price = "$80m";
+        NewArt3.Picture = "les_amoureux.jpg";
+        NewArt3.Year = "1875";
+
 
         Globals.PossibleArtsCollection.Add(NewArt);
         Globals.PossibleArtsCollection.Add(NewArt1);
         Globals.PossibleArtsCollection.Add(NewArt2);
         Globals.PossibleArtsCollection.Add(NewArt3);
+        Globals.PossibleArtsCollection.Add(NewArt4);
+        Globals.PossibleArtsCollection.Add(NewArt5);
+        Globals.PossibleArtsCollection.Add(NewArt6);
+        Globals.PossibleArtsCollection.Add(NewArt7);
+        Globals.PossibleArtsCollection.Add(NewArt8);
     }
 
     private void OnBarCodeScanned(object sender, EventArgs args)
@@ -88,19 +139,6 @@ public partial class MainViewModel : BaseViewModel
                 MyObservableArts.Add(Art);
             }
         }
-
-        /*if (codeBar.Equals("1"))
-        {
-            Art NewArt = new();
-            NewArt.Name = "Jokante";
-            NewArt.Description = "The best work of art in the world";
-            NewArt.Author = "Jamal";
-            NewArt.Picture = "la_joconde.jpg";
-
-            Globals.MyArts.Add(NewArt);
-            MyObservableArts.Add(NewArt);
-        }*/
-
     }
 
 
@@ -111,32 +149,32 @@ public partial class MainViewModel : BaseViewModel
 
         JSONServices MyService = new();
 
-        /* Art NewArt = new ();
-         NewArt.Name = "Jokante";
-         NewArt.Description = "The best work of art in the world";
-         NewArt.Author = "Jamal";
-         NewArt.Price = "4507";
+         Art NewArt = new ();
+         NewArt.Title = "La Joconde";
+         NewArt.Description = "It depicts a half-body portrait, probably of the Florentine Lisa Gherardini";
+         NewArt.Author = "Leonardo Da Vinci";
+         NewArt.Price = "$260m";
          NewArt.Picture = "la_joconde.jpg";
-         NewArt.Date = "2003";
+         NewArt.Year = "1503-1506";
 
          Globals.MyArts.Add(NewArt);
-         MyObservableArts.Add(NewArt);*/
+         MyObservableArts.Add(NewArt);
 
         await Shell.Current.GoToAsync("AddArt", true);
 
-        await MyService.SetSpiders();
+        await MyService.SetArts();
 
         IsBusy = false;
     }
 
 
     [RelayCommand]
-    private async Task GoToDetails(string Name)
+    private async Task GoToDetails(string Title)
     {
         IsBusy = true;
         await Shell.Current.GoToAsync("DetailsPage", true, new Dictionary<string, object>
         {
-            {"SelectedAnimal",Name}
+            {"SelectedArt",Title}
         });
         IsBusy = false;
     }
@@ -146,7 +184,6 @@ public partial class MainViewModel : BaseViewModel
     private async Task OpenExportArt()
     {
         IsBusy = true;
-        //await Application.Current.MainPage.Navigation.PushAsync(new ExportArt());
         await Shell.Current.GoToAsync("ExportArt", true);
         IsBusy = false;
 
@@ -155,7 +192,8 @@ public partial class MainViewModel : BaseViewModel
 
     [RelayCommand]
     private async Task LoadJSON()
-    {        IsBusy = true;
+    {   
+        IsBusy = true;
         JSONServices MyService = new();
 
         await MyService.GetArts();

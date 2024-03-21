@@ -6,30 +6,32 @@
              Title="ExportArt"
              xmlns:model="clr-namespace:MyApp.Model" >
     <VerticalStackLayout>
-        <Label Text="Welcome to ArtCollect!"
-           VerticalOptions="Center"
-           HorizontalOptions="Center" />
-        <HorizontalStackLayout>
-            <Label Text="Id" VerticalOptions="Center"/>
+        <Label Text="Export CSV" FontSize="Large" FontFamily="MuseoSansRounded300" HorizontalOptions="Center" Margin="0,0,0,20"/>
+        <HorizontalStackLayout HorizontalOptions="Center">
+            <Label Text="Id" FontFamily="MuseoSansRounded300" VerticalOptions="Center"/>
             <CheckBox x:Name="Checkbox_Id" IsChecked="{Binding CheckBox_Id}"/>
-            <Label Text="Name" VerticalOptions="Center"/>
-            <CheckBox x:Name="Checkbox_Name" IsChecked="{Binding CheckBox_Name}"/>
-            <Label Text="Description" VerticalOptions="Center"/>
+            <Label Text="Title" FontFamily="MuseoSansRounded300" VerticalOptions="Center"/>
+            <CheckBox x:Name="Checkbox_Name" IsChecked="{Binding CheckBox_Title}"/>
+            <Label Text="Description" FontFamily="MuseoSansRounded300" VerticalOptions="Center"/>
             <CheckBox x:Name="Checkbox_Description" IsChecked="{Binding CheckBox_Description}"/>
-            <Label Text="Author" VerticalOptions="Center"/>
-            <CheckBox x:Name="Checkbox_Author" IsChecked="{Binding CheckBox_Author}"/> 
-            <Label Text="Price" VerticalOptions="Center"/>
-            <CheckBox x:Name="Checkbox_Price" IsChecked="{Binding CheckBox_Price}"/> 
-            <Label Text="Date" VerticalOptions="Center"/>
-            <CheckBox x:Name="Checkbox_Date" IsChecked="{Binding CheckBox_Date}"/>            
+            <Label Text="Author" FontFamily="MuseoSansRounded300" VerticalOptions="Center"/>
+            <CheckBox x:Name="Checkbox_Author" IsChecked="{Binding CheckBox_Author}"/>
+            <Label Text="Price" FontFamily="MuseoSansRounded300" VerticalOptions="Center"/>
+            <CheckBox x:Name="Checkbox_Price" IsChecked="{Binding CheckBox_Price}"/>
+            <Label Text="Year" FontFamily="MuseoSansRounded300" VerticalOptions="Center"/>
+            <CheckBox x:Name="Checkbox_Date" IsChecked="{Binding CheckBox_Year}"/>            
         </HorizontalStackLayout>
         
-        <Button Text="Export CSV" 
+        <Button Text="Export" 
         Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:ExportArtViewModel}}, Path=ExportCSVCommand}"
         HorizontalOptions="Center"
         VerticalOptions="End"
-        BorderWidth="2" 
-        BackgroundColor="Transparent" BorderColor="Green" TextColor="Green"
+        BorderWidth="1" 
+        FontAttributes="Bold" 
+        FontSize="20" 
+        FontFamily="MuseoSansRounded300"
+        Padding="25,10"
+        BackgroundColor="#F7A711" BorderColor="Transparent" TextColor="#1A3F6B"
         IsEnabled="{Binding IsNotBusy}"/>
     </VerticalStackLayout>
 </ContentPage>

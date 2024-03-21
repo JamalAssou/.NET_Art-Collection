@@ -14,7 +14,7 @@ namespace MyApp.ViewModel
         [ObservableProperty]
         public bool checkBox_Id; //On met en miniscule ici quand on l'observe et plus tard on le met en majuscule
         [ObservableProperty]
-        public bool checkBox_Name;
+        public bool checkBox_Title;
         [ObservableProperty]
         public bool checkBox_Description;
         [ObservableProperty]
@@ -22,7 +22,7 @@ namespace MyApp.ViewModel
         [ObservableProperty]
         public bool checkBox_Price;
         [ObservableProperty]
-        public bool checkBox_Date;
+        public bool checkBox_Year;
         public ExportArtViewModel()
         { }
 
@@ -37,11 +37,11 @@ namespace MyApp.ViewModel
             {
 
                 if (CheckBox_Id) txt += art.Id + ";";//ici on commence par une majuscule
-                if (CheckBox_Name) txt += art.Name + ";";
+                if (CheckBox_Title) txt += art.Title + ";";
                 if (CheckBox_Description) txt += art.Description + ";";
                 if (CheckBox_Author) txt += art.Author + ";";
                 if (CheckBox_Price) txt += art.Price + ";";
-                if (CheckBox_Date) txt += art.Date + ";";
+                if (CheckBox_Year) txt += art.Year + ";";
                 txt += ";\r\n";
 
                 txt.Replace(";;", "");

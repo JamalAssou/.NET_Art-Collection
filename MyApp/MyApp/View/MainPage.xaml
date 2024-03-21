@@ -8,28 +8,44 @@
     <ScrollView>
         <StackLayout VerticalOptions="StartAndExpand">
             <StackLayout HorizontalOptions="CenterAndExpand">
-                <Label Text="Welcome to ArtCollect!"
+                <Image Source="logo_art_collection.png" 
+                       Aspect="AspectFit"
+                       HeightRequest="180"
+                       WidthRequest="180"
                        VerticalOptions="Center"
+                       Margin="0,13,0,0"
                        HorizontalOptions="Center" />
             </StackLayout>
             <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal" Spacing="10" Padding="10">
                 <Button Text="Export" 
                         Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MainViewModel}}, Path=OpenExportArtCommand}"
                         HorizontalOptions="Center"
-                        BorderWidth="2" 
-                        BackgroundColor="Transparent" BorderColor="Green" TextColor="Green"
+                        BorderWidth="1"             
+                        FontAttributes="Bold" 
+                        FontSize="25" 
+                        FontFamily="MuseoSansRounded300"
+                        Padding="25,10"
+                        BackgroundColor="#F7A711" TextColor="#1A3F6B"
                         IsEnabled="{Binding IsNotBusy}"/>
                 <Button Text="Add Art" 
                         Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MainViewModel}}, Path=AddArtCommand}"
                         HorizontalOptions="Center"
-                        BorderWidth="2" 
-                        BackgroundColor="Transparent" BorderColor="Green" TextColor="Green"
+                        BorderWidth="1"             
+                        FontAttributes="Bold" 
+                        FontSize="25" 
+                        FontFamily="MuseoSansRounded300"
+                        Padding="25,10"
+                        BackgroundColor="#F7A711" TextColor="#1A3F6B"
                         IsEnabled="{Binding IsNotBusy}"/>
                 <Button Text="Load Json" 
                         Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MainViewModel}}, Path=LoadJSONCommand}"
                         HorizontalOptions="Center"
-                        BorderWidth="2" 
-                        BackgroundColor="Transparent" BorderColor="Green" TextColor="Green"
+                        BorderWidth="1"             
+                        FontAttributes="Bold" 
+                        FontSize="25" 
+                        FontFamily="MuseoSansRounded300"
+                        Padding="25,10"
+                        BackgroundColor="#F7A711" TextColor="#1A3F6B"
                         IsEnabled="{Binding IsNotBusy}"/>
             </StackLayout>
             <StackLayout HorizontalOptions="CenterAndExpand">
@@ -37,7 +53,8 @@
             </StackLayout>
 
             <CollectionView ItemsSource="{Binding MyObservableArts}"
-                            SelectionMode="None">
+                            SelectionMode="None"
+                            Margin="14,0,14,0">
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="model:Art">
                         <Border StrokeThickness="4"
@@ -49,29 +66,29 @@
                                                 Aspect="AspectFit"
                                                 HeightRequest="100"
                                                 Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MainViewModel}}, Path=GoToDetailsCommand}"
-                                                CommandParameter="{Binding Name}"/>
-                                <StackLayout VerticalOptions="Center">
-                                    <Label  Text="{Binding Path=Name,StringFormat='   Name: {0:S2}'}" 
+                                                CommandParameter="{Binding Title}"/>
+                                <StackLayout VerticalOptions="Center" Spacing="3">
+                                    <Label  Text="{Binding Path=Title, StringFormat='   Title: {0:S2}'}" 
                                             Style="{StaticResource SubHeadline}"
                                             FontSize="15"
                                             HorizontalOptions="Start"
                                             VerticalOptions="Center"/>
-                                    <Label  Text="{Binding Path=Author,StringFormat='   Author: {0:S2}'}" 
+                                    <Label  Text="{Binding Path=Author, StringFormat='   Author: {0:S2}'}" 
                                             Style="{StaticResource SubHeadline}"
                                             FontSize="15"
                                             HorizontalOptions="Start"
                                             VerticalOptions="Center"/>
-                                    <Label  Text="{Binding Path=Description,StringFormat='   Description: {0:S2}'}" 
+                                    <Label  Text="{Binding Path=Description, StringFormat='   Description: {0:S2}'}" 
+                                            Style="{StaticResource SubHeadline}"
+                                            FontSize="15"                                        
+                                            HorizontalOptions="Start"
+                                            VerticalOptions="Center"/>
+                                    <Label  Text="{Binding Path=Year, StringFormat='   Year: {0:S2}'}" 
                                             Style="{StaticResource SubHeadline}"
                                             FontSize="15"
                                             HorizontalOptions="Start"
                                             VerticalOptions="Center"/>
-                                    <Label  Text="{Binding Path=Date,StringFormat='   Date: {0:S2}'}" 
-                                            Style="{StaticResource SubHeadline}"
-                                            FontSize="15"
-                                            HorizontalOptions="Start"
-                                            VerticalOptions="Center"/>
-                                    <Label  Text="{Binding Path=Price,StringFormat='   Price: {0:S2}'}" 
+                                    <Label  Text="{Binding Path=Price, StringFormat='   Price: {0:S2}'}" 
                                             Style="{StaticResource SubHeadline}"
                                             FontSize="15"
                                             HorizontalOptions="Start"

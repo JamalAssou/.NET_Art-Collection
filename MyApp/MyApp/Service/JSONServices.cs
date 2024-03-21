@@ -28,7 +28,7 @@ internal class JSONServices
         }
     }
 
-    internal async Task  SetSpiders()
+    internal async Task  SetArts()
     {
         string filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "Arts.json");
         

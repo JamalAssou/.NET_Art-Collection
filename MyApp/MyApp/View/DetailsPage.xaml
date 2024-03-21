@@ -7,7 +7,8 @@
              x:Class="MyApp.View.DetailsPage">
     <VerticalStackLayout>
         <Label 
-            Text="{Binding AnimalName}"
+            Text="{Binding ArtTitle}"
+            FontFamily="MuseoSansRounded300"
             VerticalOptions="Center" 
             HorizontalOptions="Center" 
             FontSize="25"/>

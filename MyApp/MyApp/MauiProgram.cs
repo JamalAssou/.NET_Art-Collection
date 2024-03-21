@@ -14,6 +14,7 @@ namespace MyApp
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+                    fonts.AddFont("MuseoSansRounded-300.otf", "MuseoSansRounded300"); // police de la HELB
                 });
 
 #if DEBUG
