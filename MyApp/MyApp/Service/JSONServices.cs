@@ -9,9 +9,9 @@ namespace MyApp.Service;
 
 internal class JSONServices
 {
-    internal async Task GetSpiders()
+    internal async Task GetArts()
     {     
-        string filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "Spiders.json");
+        string filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "Arts.json");
         
         try
         {
@@ -19,7 +19,8 @@ internal class JSONServices
 
             using var reader = new StreamReader(stream);
             var contents = await reader.ReadToEndAsync();
-            Globals.MySpiders = JsonSerializer.Deserialize<List<Spider>>(contents);
+            Globals.MyArts = JsonSerializer.Deserialize<List<Art>>(contents);
+
         }
         catch (Exception ex) 
         {
@@ -29,14 +30,14 @@ internal class JSONServices
 
     internal async Task  SetSpiders()
     {
-        string filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "Spiders.json");
+        string filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "Arts.json");
         
         try
         {
             if (File.Exists(filePath)) File.Delete(filePath); 
             using FileStream fileStream = File.Create(filePath);
 
-            await JsonSerializer.SerializeAsync(fileStream, Globals.MySpiders);
+            await JsonSerializer.SerializeAsync(fileStream, Globals.MyArts);
             await fileStream.DisposeAsync();
         }
         catch (Exception ex)

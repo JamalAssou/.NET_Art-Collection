@@ -1,8 +1,4 @@
-File=Resources\Images\black_widow.jpg;Link=;BaseSize=;Resize=;TintColor=;Color=;IsAppIcon=;ForegroundScale=;ForegroundFile=
-File=Resources\Images\brachypelma.png;Link=;BaseSize=;Resize=;TintColor=;Color=;IsAppIcon=;ForegroundScale=;ForegroundFile=
-File=Resources\Images\jungle.png;Link=;BaseSize=;Resize=;TintColor=;Color=;IsAppIcon=;ForegroundScale=;ForegroundFile=
-File=Resources\Images\morelia.png;Link=;BaseSize=;Resize=;TintColor=;Color=;IsAppIcon=;ForegroundScale=;ForegroundFile=
-File=Resources\Images\python.png;Link=;BaseSize=;Resize=;TintColor=;Color=;IsAppIcon=;ForegroundScale=;ForegroundFile=
-File=Resources\Images\scorpion.png;Link=;BaseSize=;Resize=;TintColor=;Color=;IsAppIcon=;ForegroundScale=;ForegroundFile=
-File=Resources\Images\vipere.png;Link=;BaseSize=;Resize=;TintColor=;Color=;IsAppIcon=;ForegroundScale=;ForegroundFile=
+File=Resources\Images\la_joconde.jpg;Link=;BaseSize=;Resize=;TintColor=;Color=;IsAppIcon=;ForegroundScale=;ForegroundFile=
+File=Resources\Images\the_nightmare.jpg;Link=;BaseSize=;Resize=;TintColor=;Color=;IsAppIcon=;ForegroundScale=;ForegroundFile=
+File=Resources\Images\the_scream.jpg;Link=;BaseSize=;Resize=;TintColor=;Color=;IsAppIcon=;ForegroundScale=;ForegroundFile=
 File=Resources\AppIcon\appicon.svg;Link=;BaseSize=;Resize=;TintColor=;Color=#512BD4;IsAppIcon=True;ForegroundScale=;ForegroundFile=Resources\AppIcon\appiconfg.svg

@@ -199,26 +199,14 @@
     <AppxPackagedFile Include="C:\github\.NET_Art-Collection\MyApp\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-400.png">
       <PackagePath>appiconWideTile.scale-400.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\github\.NET_Art-Collection\MyApp\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\black_widow.scale-100.jpg">
-      <PackagePath>black_widow.scale-100.jpg</PackagePath>
+    <AppxPackagedFile Include="C:\github\.NET_Art-Collection\MyApp\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\la_joconde.scale-100.jpg">
+      <PackagePath>la_joconde.scale-100.jpg</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\github\.NET_Art-Collection\MyApp\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\brachypelma.scale-100.png">
-      <PackagePath>brachypelma.scale-100.png</PackagePath>
+    <AppxPackagedFile Include="C:\github\.NET_Art-Collection\MyApp\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\the_nightmare.scale-100.jpg">
+      <PackagePath>the_nightmare.scale-100.jpg</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\github\.NET_Art-Collection\MyApp\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\jungle.scale-100.png">
-      <PackagePath>jungle.scale-100.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\github\.NET_Art-Collection\MyApp\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\morelia.scale-100.png">
-      <PackagePath>morelia.scale-100.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\github\.NET_Art-Collection\MyApp\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\python.scale-100.png">
-      <PackagePath>python.scale-100.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\github\.NET_Art-Collection\MyApp\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\scorpion.scale-100.png">
-      <PackagePath>scorpion.scale-100.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\github\.NET_Art-Collection\MyApp\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\vipere.scale-100.png">
-      <PackagePath>vipere.scale-100.png</PackagePath>
+    <AppxPackagedFile Include="C:\github\.NET_Art-Collection\MyApp\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\the_scream.scale-100.jpg">
+      <PackagePath>the_scream.scale-100.jpg</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\github\.NET_Art-Collection\MyApp\MyApp\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\MyApp.deps.json">
       <PackagePath>MyApp.deps.json</PackagePath>

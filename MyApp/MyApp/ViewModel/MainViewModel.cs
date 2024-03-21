@@ -5,13 +5,14 @@ using System.Linq;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 
 namespace MyApp.ViewModel;
 
 public partial class MainViewModel : BaseViewModel
 {
-    public ObservableCollection<Spider> MyObservableSpiders { get; } = new();
+    public ObservableCollection<Art> MyObservableArts { get; } = new();
     [ObservableProperty]
     string animalName;
     DeviceOrientationService myScanner;
@@ -34,20 +35,20 @@ public partial class MainViewModel : BaseViewModel
     }
 
     [RelayCommand]
-    private async Task AddElement()
+    private async Task AddArt()
     {
         IsBusy = true;
 
         JSONServices MyService = new();
 
-        Spider NewSpider = new ();
-        NewSpider.Name = "je nveaui";
-        NewSpider.Description = "hello";
-        NewSpider.Origin = "Belgique";
-        NewSpider.Picture = "scorpion.jpg";
+        Art NewArt = new ();
+        NewArt.Name = "Jokante";
+        NewArt.Description = "The best work of art in the world";
+        NewArt.Author = "Jamal";
+        NewArt.Picture = "la_joconde.jpg";
        
-        Globals.MySpiders.Add(NewSpider);
-        MyObservableSpiders.Add(NewSpider);
+        Globals.MyArts.Add(NewArt);
+        MyObservableArts.Add(NewArt);
 
         await MyService.SetSpiders();
 
@@ -65,16 +66,26 @@ public partial class MainViewModel : BaseViewModel
     }
 
     [RelayCommand]
+    private async Task OpenExportArt()
+    {
+        IsBusy = true;
+        //await Application.Current.MainPage.Navigation.PushAsync(new ExportArt());
+        await Shell.Current.GoToAsync("ExportArt", true);
+        IsBusy = false;
+
+    }
+
+    [RelayCommand]
     private async Task LoadJSON()
     {        IsBusy = true;
         JSONServices MyService = new();
 
-        await MyService.GetSpiders();
-        MyObservableSpiders.Clear();
+        await MyService.GetArts();
+        MyObservableArts.Clear();
 
-        foreach(var spider in Globals.MySpiders) 
+        foreach(var spider in Globals.MyArts) 
         {
-            MyObservableSpiders.Add(spider);
+            MyObservableArts.Add(spider);
         }
 
         IsBusy = false;

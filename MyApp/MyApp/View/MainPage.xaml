@@ -9,8 +9,14 @@
     <ScrollView>
         <VerticalStackLayout Padding="30,0" Spacing="25">
             <HorizontalStackLayout Spacing="10" Padding="10">
-                <Button Text="Add spider" 
-                        Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MainViewModel}}, Path=AddElementCommand}"
+                <Button Text="Export" 
+                        Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MainViewModel}}, Path=OpenExportArtCommand}"
+                        HorizontalOptions="Center"
+                        BorderWidth="2" 
+                        BackgroundColor="Transparent" BorderColor="Green" TextColor="Green"
+                        IsEnabled="{Binding IsNotBusy}"/>
+                <Button Text="Add Art" 
+                        Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MainViewModel}}, Path=AddArtCommand}"
                         HorizontalOptions="Center"
                         BorderWidth="2" 
                         BackgroundColor="Transparent" BorderColor="Green" TextColor="Green"
@@ -24,10 +30,10 @@
                 <Label  Text="{Binding CodeBar}"/>
             </HorizontalStackLayout>           
 
-            <CollectionView ItemsSource="{Binding MyObservableSpiders}"
+            <CollectionView ItemsSource="{Binding MyObservableArts}"
                             SelectionMode="None">
                 <CollectionView.ItemTemplate>
-                    <DataTemplate x:DataType="model:Spider">
+                    <DataTemplate x:DataType="model:Art">
                         <Border StrokeThickness="4"
                                 StrokeShape="RoundRectangle 10,10,10,10"
                                 Padding="10">
@@ -50,7 +56,7 @@
                                             FontSize="15"
                                             HorizontalOptions="Start"
                                             VerticalOptions="Center"/>
-                                    <Label  Text="{Binding Path=Origin,StringFormat='   Origin: {0:S2}'}" 
+                                    <Label  Text="{Binding Path=Picture,StringFormat='   Origin: {0:S2}'}" 
                                             Style="{StaticResource SubHeadline}"
                                             FontSize="15"
                                             HorizontalOptions="Start"
