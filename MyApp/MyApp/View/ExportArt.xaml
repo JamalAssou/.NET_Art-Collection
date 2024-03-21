@@ -6,21 +6,28 @@
              Title="ExportArt"
              xmlns:model="clr-namespace:MyApp.Model" >
     <VerticalStackLayout>
-        <Label Text="Welcome to .NET MAUI!"
+        <Label Text="Welcome to ArtCollect!"
            VerticalOptions="Center"
            HorizontalOptions="Center" />
-        <CheckBox x:Name="Checkbox_Id" IsChecked="{Binding CheckBox_Id}"/>
-        <Label Text="Id" VerticalOptions="Center"/>
-        <CheckBox x:Name="Checkbox_Name" IsChecked="{Binding CheckBox_Name}"/>
-        <Label Text="Name" VerticalOptions="Center"/>
-        <CheckBox x:Name="Checkbox_Description" IsChecked="{Binding CheckBox_Descritpion}"/>
-        <Label Text="Description" VerticalOptions="Center"/>
-        <CheckBox x:Name="Checkbox_Author" IsChecked="{Binding CheckBox_Author}"/>
-        <Label Text="Author" VerticalOptions="Center"/>
-
+        <HorizontalStackLayout>
+            <Label Text="Id" VerticalOptions="Center"/>
+            <CheckBox x:Name="Checkbox_Id" IsChecked="{Binding CheckBox_Id}"/>
+            <Label Text="Name" VerticalOptions="Center"/>
+            <CheckBox x:Name="Checkbox_Name" IsChecked="{Binding CheckBox_Name}"/>
+            <Label Text="Description" VerticalOptions="Center"/>
+            <CheckBox x:Name="Checkbox_Description" IsChecked="{Binding CheckBox_Description}"/>
+            <Label Text="Author" VerticalOptions="Center"/>
+            <CheckBox x:Name="Checkbox_Author" IsChecked="{Binding CheckBox_Author}"/> 
+            <Label Text="Price" VerticalOptions="Center"/>
+            <CheckBox x:Name="Checkbox_Price" IsChecked="{Binding CheckBox_Price}"/> 
+            <Label Text="Date" VerticalOptions="Center"/>
+            <CheckBox x:Name="Checkbox_Date" IsChecked="{Binding CheckBox_Date}"/>            
+        </HorizontalStackLayout>
+        
         <Button Text="Export CSV" 
         Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:ExportArtViewModel}}, Path=ExportCSVCommand}"
         HorizontalOptions="Center"
+        VerticalOptions="End"
         BorderWidth="2" 
         BackgroundColor="Transparent" BorderColor="Green" TextColor="Green"
         IsEnabled="{Binding IsNotBusy}"/>

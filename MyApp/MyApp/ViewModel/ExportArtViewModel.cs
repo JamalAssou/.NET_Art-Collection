@@ -19,6 +19,10 @@ namespace MyApp.ViewModel
         public bool checkBox_Description;
         [ObservableProperty]
         public bool checkBox_Author;
+        [ObservableProperty]
+        public bool checkBox_Price;
+        [ObservableProperty]
+        public bool checkBox_Date;
         public ExportArtViewModel()
         { }
 
@@ -36,6 +40,8 @@ namespace MyApp.ViewModel
                 if (CheckBox_Name) txt += art.Name + ";";
                 if (CheckBox_Description) txt += art.Description + ";";
                 if (CheckBox_Author) txt += art.Author + ";";
+                if (CheckBox_Price) txt += art.Price + ";";
+                if (CheckBox_Date) txt += art.Date + ";";
                 txt += ";\r\n";
 
                 txt.Replace(";;", "");

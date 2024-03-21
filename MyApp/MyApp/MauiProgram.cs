@@ -27,6 +27,9 @@ namespace MyApp
 
             builder.Services.AddTransient<ExportArt>();
             builder.Services.AddTransient<ExportArtViewModel>();
+            
+            builder.Services.AddTransient<AddArt>();
+            builder.Services.AddTransient<AddArtViewModel>();
 
             builder.Services.AddTransient<JSONServices>();
 

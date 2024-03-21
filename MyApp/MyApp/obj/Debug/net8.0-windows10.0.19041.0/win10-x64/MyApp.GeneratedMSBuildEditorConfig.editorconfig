@@ -36,6 +36,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = MyApp.Resources.Styles.Sty
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
 
+[C:/github/.NET_Art-Collection/MyApp/MyApp/View/AddArt.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MyApp.View.AddArt.xaml
+build_metadata.AdditionalFiles.TargetPath = View\AddArt.xaml
+build_metadata.AdditionalFiles.RelativePath = View\AddArt.xaml
+
 [C:/github/.NET_Art-Collection/MyApp/MyApp/View/DetailsPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = MyApp.View.DetailsPage.xaml

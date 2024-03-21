@@ -12,4 +12,5 @@ global using MyApp.Service;
 public class Globals
 {
     public static List<Art> MyArts= new();
+    public static List<Art> PossibleArtsCollection= new();
 }

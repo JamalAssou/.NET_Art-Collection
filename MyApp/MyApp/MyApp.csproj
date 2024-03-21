@@ -60,6 +60,7 @@
 	  <None Remove="Resources\Images\La_Joconde.jpg" />
 	  <None Remove="Resources\Images\The_Nightmare.JPG" />
 	  <None Remove="Resources\Images\The_Scream.jpg" />
+	  <None Remove="Resources\Images\tournesol.jpg" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -83,6 +84,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="View\AddArt.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="View\DetailsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

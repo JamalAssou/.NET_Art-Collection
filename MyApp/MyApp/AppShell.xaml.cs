@@ -8,6 +8,7 @@
 
             Routing.RegisterRoute(nameof(DetailsPage), typeof(DetailsPage));
             Routing.RegisterRoute(nameof(ExportArt), typeof(ExportArt));
+            Routing.RegisterRoute(nameof(AddArt), typeof(AddArt));
         }
     }
 }

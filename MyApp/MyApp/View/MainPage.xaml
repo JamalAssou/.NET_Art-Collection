@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"             
@@ -7,8 +6,13 @@
              x:Class="MyApp.View.MainPage">
 
     <ScrollView>
-        <VerticalStackLayout Padding="30,0" Spacing="25">
-            <HorizontalStackLayout Spacing="10" Padding="10">
+        <StackLayout VerticalOptions="StartAndExpand">
+            <StackLayout HorizontalOptions="CenterAndExpand">
+                <Label Text="Welcome to ArtCollect!"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center" />
+            </StackLayout>
+            <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal" Spacing="10" Padding="10">
                 <Button Text="Export" 
                         Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MainViewModel}}, Path=OpenExportArtCommand}"
                         HorizontalOptions="Center"
@@ -27,8 +31,10 @@
                         BorderWidth="2" 
                         BackgroundColor="Transparent" BorderColor="Green" TextColor="Green"
                         IsEnabled="{Binding IsNotBusy}"/>
-                <Label  Text="{Binding CodeBar}"/>
-            </HorizontalStackLayout>           
+            </StackLayout>
+            <StackLayout HorizontalOptions="CenterAndExpand">
+                <Label Text="{Binding CodeBar}" />
+            </StackLayout>
 
             <CollectionView ItemsSource="{Binding MyObservableArts}"
                             SelectionMode="None">
@@ -37,16 +43,20 @@
                         <Border StrokeThickness="4"
                                 StrokeShape="RoundRectangle 10,10,10,10"
                                 Padding="10">
-                            <Grid HeightRequest="100" ColumnDefinitions="0.5*,*">
-                                <ImageButton    Grid.Column="0"
-                                                HorizontalOptions="Start"
+                            <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                                <ImageButton    HorizontalOptions="Start"
                                                 Source="{Binding Picture}"
                                                 Aspect="AspectFit"
                                                 HeightRequest="100"
                                                 Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MainViewModel}}, Path=GoToDetailsCommand}"
                                                 CommandParameter="{Binding Name}"/>
-                                <VerticalStackLayout Grid.Column="1" VerticalOptions="Center">
+                                <StackLayout VerticalOptions="Center">
                                     <Label  Text="{Binding Path=Name,StringFormat='   Name: {0:S2}'}" 
+                                            Style="{StaticResource SubHeadline}"
+                                            FontSize="15"
+                                            HorizontalOptions="Start"
+                                            VerticalOptions="Center"/>
+                                    <Label  Text="{Binding Path=Author,StringFormat='   Author: {0:S2}'}" 
                                             Style="{StaticResource SubHeadline}"
                                             FontSize="15"
                                             HorizontalOptions="Start"
@@ -56,17 +66,22 @@
                                             FontSize="15"
                                             HorizontalOptions="Start"
                                             VerticalOptions="Center"/>
-                                    <Label  Text="{Binding Path=Picture,StringFormat='   Origin: {0:S2}'}" 
+                                    <Label  Text="{Binding Path=Date,StringFormat='   Date: {0:S2}'}" 
                                             Style="{StaticResource SubHeadline}"
                                             FontSize="15"
                                             HorizontalOptions="Start"
                                             VerticalOptions="Center"/>
-                                </VerticalStackLayout>                              
-                            </Grid>
+                                    <Label  Text="{Binding Path=Price,StringFormat='   Price: {0:S2}'}" 
+                                            Style="{StaticResource SubHeadline}"
+                                            FontSize="15"
+                                            HorizontalOptions="Start"
+                                            VerticalOptions="Center"/>
+                                </StackLayout>
+                            </StackLayout>
                         </Border>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
-            </CollectionView>     
-        </VerticalStackLayout>
+            </CollectionView>
+        </StackLayout>
     </ScrollView>
 </ContentPage>
