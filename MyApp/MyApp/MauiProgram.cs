@@ -31,6 +31,7 @@ namespace MyApp
             
             builder.Services.AddTransient<AddArt>();
             builder.Services.AddTransient<AddArtViewModel>();
+            
 
             builder.Services.AddTransient<JSONServices>();
 

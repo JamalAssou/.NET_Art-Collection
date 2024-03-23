@@ -27,6 +27,15 @@ public partial class MainViewModel : BaseViewModel
         FillPossibleArtsCollection();
     }
 
+    public void RefreshPage()
+    {
+        MyObservableArts.Clear();
+        foreach (var art in Globals.MyArts)
+        {
+            MyObservableArts.Add(art);
+        }
+    }
+
     private void FillPossibleArtsCollection()
     {
         Art NewArt = new();
@@ -66,49 +75,49 @@ public partial class MainViewModel : BaseViewModel
         NewArt3.Year = "1893-1917";
         
         Art NewArt4 = new();
-        NewArt3.Id = 4;
-        NewArt3.Title = "Guernica";
-        NewArt3.Description = "Powerful testimony to the horrors of the Spanish Civil War, expressing the ";
-        NewArt3.Author = "Pablo Picasso";
-        NewArt3.Price = "$200m";
-        NewArt3.Picture = "guernica.jpg";
-        NewArt3.Year = "1937";
+        NewArt4.Id = 4;
+        NewArt4.Title = "Guernica";
+        NewArt4.Description = "Powerful testimony to the horrors of the Spanish Civil War, expressing the ";
+        NewArt4.Author = "Pablo Picasso";
+        NewArt4.Price = "$200m";
+        NewArt4.Picture = "guernica.jpg";
+        NewArt4.Year = "1937";
         
         Art NewArt5 = new();
-        NewArt3.Id = 5;
-        NewArt3.Title = "La Nuit étoilée";
-        NewArt3.Description = "Symbolizing the modern man swept away by a crisis of existential anguish";
-        NewArt3.Author = "Vincent van Gogh";
-        NewArt3.Price = "$119m";
-        NewArt3.Picture = "la_nuit_etoilee.jpg";
-        NewArt3.Year = "1893-1917";
+        NewArt5.Id = 5;
+        NewArt5.Title = "La Nuit étoilée";
+        NewArt5.Description = "Symbolizing the modern man swept away by a crisis of existential anguish";
+        NewArt5.Author = "Vincent van Gogh";
+        NewArt5.Price = "$119m";
+        NewArt5.Picture = "la_nuit_etoilee.jpg";
+        NewArt5.Year = "1893-1917";
         
         Art NewArt6 = new();
-        NewArt3.Id = 6;
-        NewArt3.Title = "Les Demoiselles d'Avignon";
-        NewArt3.Description = "A revolutionary work that heralded Cubism, featuring distorted, angular figures in a brothel scene";
-        NewArt3.Author = "Pablo Picasso";
-        NewArt3.Price = "$200m";
-        NewArt3.Picture = "les_demoiselles_davignon.jpg";
-        NewArt3.Year = "1907";
+        NewArt6.Id = 6;
+        NewArt6.Title = "Les Demoiselles d'Avignon";
+        NewArt6.Description = "A revolutionary work that heralded Cubism, featuring distorted, angular figures in a brothel scene";
+        NewArt6.Author = "Pablo Picasso";
+        NewArt6.Price = "$200m";
+        NewArt6.Picture = "les_demoiselles_davignon.jpg";
+        NewArt6.Year = "1907";
         
         Art NewArt7 = new();
-        NewArt3.Id = 7;
-        NewArt3.Title = "La Persistance de la Mémoire";
-        NewArt3.Description = "A surreal representation of soft watches in a desert landscape, exploring the concepts of time and reality";
-        NewArt3.Author = "Salvador Dalí";
-        NewArt3.Price = "$90m";
-        NewArt3.Picture = "la_persistance_de_la_memoire.jpeg";
-        NewArt3.Year = "1931";
+        NewArt7.Id = 7;
+        NewArt7.Title = "La Persistance de la Mémoire";
+        NewArt7.Description = "A surreal representation of soft watches in a desert landscape, exploring the concepts of time and reality";
+        NewArt7.Author = "Salvador Dalí";
+        NewArt7.Price = "$90m";
+        NewArt7.Picture = "la_persistance_de_la_memoire.jpeg";
+        NewArt7.Year = "1931";
 
         Art NewArt8 = new();
-        NewArt3.Id = 8;
-        NewArt3.Title = "Les Amoureux";
-        NewArt3.Description = "An intimate and moving depiction of a couple embracing in an idyllic landscape, symbolizing love and human connection";
-        NewArt3.Author = "Pierre-Auguste Renoir";
-        NewArt3.Price = "$80m";
-        NewArt3.Picture = "les_amoureux.jpg";
-        NewArt3.Year = "1875";
+        NewArt8.Id = 8;
+        NewArt8.Title = "Les Amoureux";
+        NewArt8.Description = "An intimate and moving depiction of a couple embracing in an idyllic landscape, symbolizing love and human connection";
+        NewArt8.Author = "Pierre-Auguste Renoir";
+        NewArt8.Price = "$80m";
+        NewArt8.Picture = "les_amoureux.jpg";
+        NewArt8.Year = "1875";
 
 
         Globals.PossibleArtsCollection.Add(NewArt);

@@ -8,15 +8,23 @@
     <StackLayout Padding="20">
         <Label Text="Add Art" FontSize="Large" FontFamily="MuseoSansRounded300" HorizontalOptions="Center" Margin="0,0,0,20"/>
 
-        <Entry Placeholder="Title" FontFamily="MuseoSansRounded300" Text="{Binding Title}" x:Name="TitleEntry" Margin="0,0,0,10"/>
-        <Entry Placeholder="Artist" FontFamily="MuseoSansRounded300" Text="{Binding Author}" x:Name="ArtistEntry" Margin="0,0,0,10"/>
-        <Entry Placeholder="Year" FontFamily="MuseoSansRounded300" Text="{Binding Year}" Keyboard="Numeric" x:Name="YearEntry" Margin="0,0,0,10"/>
-        <Entry Placeholder="Description" FontFamily="MuseoSansRounded300" Text="{Binding Description}" x:Name="DescriptionEntry" Margin="0,0,0,10"/>
-        <Entry Placeholder="Picture" FontFamily="MuseoSansRounded300" Text="{Binding Picture}" x:Name="PictureEntry" Margin="0,0,0,10"/>
-        <Entry Placeholder="Price" FontFamily="MuseoSansRounded300" Text="{Binding Price}" x:Name="PriceEntry" Margin="0,0,0,10"/>
+        <Entry Placeholder="Title" FontFamily="MuseoSansRounded300" Text="{Binding Title}" x:Name="Title" Margin="0,0,0,10"/>
+        <Entry Placeholder="Artist" FontFamily="MuseoSansRounded300" Text="{Binding Author}" x:Name="Author" Margin="0,0,0,10"/>
+        <Entry Placeholder="Year" FontFamily="MuseoSansRounded300" Text="{Binding Year}" Keyboard="Numeric" x:Name="Year" Margin="0,0,0,10"/>
+        <Entry Placeholder="Description" FontFamily="MuseoSansRounded300" Text="{Binding Description}" x:Name="Description" Margin="0,0,0,10"/>
+        <Entry Placeholder="Picture" FontFamily="MuseoSansRounded300" Text="{Binding Picture}" x:Name="Picture" Margin="0,0,0,10"/>
+        <Entry Placeholder="Price" FontFamily="MuseoSansRounded300" Text="{Binding Price}" x:Name="Price" Margin="0,0,0,10"/>
 
-        <Button Text="Submit" 
-                Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:AddArtViewModel}}, Path=OnSubmitClickedCommand}"
-                HorizontalOptions="Center" FontFamily="MuseoSansRounded300" BackgroundColor="#F7A711" TextColor="#1A3F6B" FontAttributes="Bold" FontSize="25" Padding="35,10"/>
+        <Button Text="Export" 
+ Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:AddArtViewModel}}, Path=AddArtFinalCommand}"
+ HorizontalOptions="Center"
+ VerticalOptions="End"
+ BorderWidth="1" 
+ FontAttributes="Bold" 
+ FontSize="20" 
+ FontFamily="MuseoSansRounded300"
+ Padding="25,10"
+ BackgroundColor="#F7A711" BorderColor="Transparent" TextColor="#1A3F6B"
+ IsEnabled="{Binding IsNotBusy}"/>
     </StackLayout>
 </ContentPage>

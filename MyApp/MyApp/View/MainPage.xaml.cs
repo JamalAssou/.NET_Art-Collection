@@ -9,4 +9,11 @@ public partial class MainPage : ContentPage
         InitializeComponent();
         BindingContext= viewModel;
 	}
+
+    protected override void OnNavigatedTo(NavigatedToEventArgs args)
+    {
+        BindingContext = null;
+        viewModel.RefreshPage();  //a developper
+        BindingContext = viewModel;
+    }
 }
