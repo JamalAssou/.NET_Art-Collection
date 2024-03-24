@@ -13,7 +13,7 @@ public partial class MainPage : ContentPage
     protected override void OnNavigatedTo(NavigatedToEventArgs args)
     {
         BindingContext = null;
-        viewModel.RefreshPage();  //a developper
+        viewModel.RefreshPage();  // à developper
         BindingContext = viewModel;
     }
 }

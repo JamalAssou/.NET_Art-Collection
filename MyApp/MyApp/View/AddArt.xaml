@@ -12,19 +12,20 @@
         <Entry Placeholder="Artist" FontFamily="MuseoSansRounded300" Text="{Binding Author}" x:Name="Author" Margin="0,0,0,10"/>
         <Entry Placeholder="Year" FontFamily="MuseoSansRounded300" Text="{Binding Year}" Keyboard="Numeric" x:Name="Year" Margin="0,0,0,10"/>
         <Entry Placeholder="Description" FontFamily="MuseoSansRounded300" Text="{Binding Description}" x:Name="Description" Margin="0,0,0,10"/>
-        <Entry Placeholder="Picture" FontFamily="MuseoSansRounded300" Text="{Binding Picture}" x:Name="Picture" Margin="0,0,0,10"/>
         <Entry Placeholder="Price" FontFamily="MuseoSansRounded300" Text="{Binding Price}" x:Name="Price" Margin="0,0,0,10"/>
+        <Button Text="Import Image" FontFamily="MuseoSansRounded300" BorderWidth="2" BorderColor="Purple" Margin="0,0,0,10" Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:AddArtViewModel}}, Path=ImportImageCommand}"/>
+        <Image x:Name="SelectedImage" Source="{Binding SelectedImage}" Margin="0,0,0,10"/>
 
-        <Button Text="Export" 
- Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:AddArtViewModel}}, Path=AddArtFinalCommand}"
- HorizontalOptions="Center"
- VerticalOptions="End"
- BorderWidth="1" 
- FontAttributes="Bold" 
- FontSize="20" 
- FontFamily="MuseoSansRounded300"
- Padding="25,10"
- BackgroundColor="#F7A711" BorderColor="Transparent" TextColor="#1A3F6B"
- IsEnabled="{Binding IsNotBusy}"/>
+        <Button Text="Add Art" 
+                Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:AddArtViewModel}}, Path=AddArtFinalCommand}"
+                HorizontalOptions="Center"
+                VerticalOptions="End"
+                BorderWidth="1" 
+                FontAttributes="Bold" 
+                FontSize="20" 
+                FontFamily="MuseoSansRounded300"
+                Padding="25,10"
+                BackgroundColor="#F7A711" BorderColor="Transparent" TextColor="#1A3F6B"
+                IsEnabled="{Binding IsNotBusy}"/>
     </StackLayout>
 </ContentPage>

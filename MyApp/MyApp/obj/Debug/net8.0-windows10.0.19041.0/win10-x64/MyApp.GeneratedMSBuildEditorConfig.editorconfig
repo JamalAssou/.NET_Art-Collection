@@ -8,53 +8,53 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = MyApp
-build_property.ProjectDir = C:\github\.NET_Art-Collection\MyApp\MyApp\
+build_property.ProjectDir = C:\GitHub\.NET_Art-Collection\MyApp\MyApp\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 
-[C:/github/.NET_Art-Collection/MyApp/MyApp/App.xaml]
+[C:/GitHub/.NET_Art-Collection/MyApp/MyApp/App.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = MyApp.App.xaml
 build_metadata.AdditionalFiles.TargetPath = App.xaml
 build_metadata.AdditionalFiles.RelativePath = App.xaml
 
-[C:/github/.NET_Art-Collection/MyApp/MyApp/AppShell.xaml]
+[C:/GitHub/.NET_Art-Collection/MyApp/MyApp/AppShell.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = MyApp.AppShell.xaml
 build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
 build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
 
-[C:/github/.NET_Art-Collection/MyApp/MyApp/Resources/Styles/Colors.xaml]
+[C:/GitHub/.NET_Art-Collection/MyApp/MyApp/Resources/Styles/Colors.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = MyApp.Resources.Styles.Colors.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
 
-[C:/github/.NET_Art-Collection/MyApp/MyApp/Resources/Styles/Styles.xaml]
+[C:/GitHub/.NET_Art-Collection/MyApp/MyApp/Resources/Styles/Styles.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = MyApp.Resources.Styles.Styles.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
 
-[C:/github/.NET_Art-Collection/MyApp/MyApp/View/AddArt.xaml]
+[C:/GitHub/.NET_Art-Collection/MyApp/MyApp/View/AddArt.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = MyApp.View.AddArt.xaml
 build_metadata.AdditionalFiles.TargetPath = View\AddArt.xaml
 build_metadata.AdditionalFiles.RelativePath = View\AddArt.xaml
 
-[C:/github/.NET_Art-Collection/MyApp/MyApp/View/DetailsPage.xaml]
+[C:/GitHub/.NET_Art-Collection/MyApp/MyApp/View/DetailsPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = MyApp.View.DetailsPage.xaml
 build_metadata.AdditionalFiles.TargetPath = View\DetailsPage.xaml
 build_metadata.AdditionalFiles.RelativePath = View\DetailsPage.xaml
 
-[C:/github/.NET_Art-Collection/MyApp/MyApp/View/ExportArt.xaml]
+[C:/GitHub/.NET_Art-Collection/MyApp/MyApp/View/ExportArt.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = MyApp.View.ExportArt.xaml
 build_metadata.AdditionalFiles.TargetPath = View\ExportArt.xaml
 build_metadata.AdditionalFiles.RelativePath = View\ExportArt.xaml
 
-[C:/github/.NET_Art-Collection/MyApp/MyApp/View/MainPage.xaml]
+[C:/GitHub/.NET_Art-Collection/MyApp/MyApp/View/MainPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = MyApp.View.MainPage.xaml
 build_metadata.AdditionalFiles.TargetPath = View\MainPage.xaml

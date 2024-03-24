@@ -13,8 +13,6 @@ namespace MyApp.ViewModel;
 public partial class MainViewModel : BaseViewModel
 {
     public ObservableCollection<Art> MyObservableArts { get; } = new();
-    [ObservableProperty]
-    string animalName;
     DeviceOrientationService myScanner;
 
     [ObservableProperty]
@@ -44,7 +42,7 @@ public partial class MainViewModel : BaseViewModel
         NewArt.Description = "It depicts a half-body portrait, probably of the Florentine Lisa Gherardini";
         NewArt.Author = "Léonard de Vinci";
         NewArt.Price = "$260m";
-        NewArt.Picture = "la_joconde.jpg";
+        NewArt.SelectedImage = "la_joconde.jpg";
         NewArt.Year = "1503-1506";
 
         Art NewArt1 = new();
@@ -53,7 +51,7 @@ public partial class MainViewModel : BaseViewModel
         NewArt1.Description = "It depicts bouquets of sunflowers in vases";
         NewArt1.Author = "Vincent van Gogh";
         NewArt1.Price = "$14.9m";
-        NewArt1.Picture = "sunflowers.jpg";
+        NewArt1.SelectedImage = "sunflowers.jpg";
         NewArt1.Year = "1887-1889";
 
         Art NewArt2 = new();
@@ -62,7 +60,7 @@ public partial class MainViewModel : BaseViewModel
         NewArt2.Description = "It shows a woman in deep sleep with her arms thrown below her, and with a demonic and ape-like incubus crouched on her chest";
         NewArt2.Author = "Henry Fuseli";
         NewArt2.Price = "$75.9m";
-        NewArt2.Picture = "the_nightmare.jpg";
+        NewArt2.SelectedImage = "the_nightmare.jpg";
         NewArt2.Year = "1781";
 
         Art NewArt3 = new();
@@ -71,7 +69,7 @@ public partial class MainViewModel : BaseViewModel
         NewArt3.Description = "Symbolizing the modern man swept away by a crisis of existential anguish";
         NewArt3.Author = "Edvard Munch";
         NewArt3.Price = "$119m";
-        NewArt3.Picture = "the_scream.jpg";
+        NewArt3.SelectedImage = "the_scream.jpg";
         NewArt3.Year = "1893-1917";
         
         Art NewArt4 = new();
@@ -80,7 +78,7 @@ public partial class MainViewModel : BaseViewModel
         NewArt4.Description = "Powerful testimony to the horrors of the Spanish Civil War, expressing the ";
         NewArt4.Author = "Pablo Picasso";
         NewArt4.Price = "$200m";
-        NewArt4.Picture = "guernica.jpg";
+        NewArt4.SelectedImage = "guernica.jpg";
         NewArt4.Year = "1937";
         
         Art NewArt5 = new();
@@ -89,7 +87,7 @@ public partial class MainViewModel : BaseViewModel
         NewArt5.Description = "Symbolizing the modern man swept away by a crisis of existential anguish";
         NewArt5.Author = "Vincent van Gogh";
         NewArt5.Price = "$119m";
-        NewArt5.Picture = "la_nuit_etoilee.jpg";
+        NewArt5.SelectedImage = "la_nuit_etoilee.jpg";
         NewArt5.Year = "1893-1917";
         
         Art NewArt6 = new();
@@ -98,7 +96,7 @@ public partial class MainViewModel : BaseViewModel
         NewArt6.Description = "A revolutionary work that heralded Cubism, featuring distorted, angular figures in a brothel scene";
         NewArt6.Author = "Pablo Picasso";
         NewArt6.Price = "$200m";
-        NewArt6.Picture = "les_demoiselles_davignon.jpg";
+        NewArt6.SelectedImage = "les_demoiselles_davignon.jpg";
         NewArt6.Year = "1907";
         
         Art NewArt7 = new();
@@ -107,7 +105,7 @@ public partial class MainViewModel : BaseViewModel
         NewArt7.Description = "A surreal representation of soft watches in a desert landscape, exploring the concepts of time and reality";
         NewArt7.Author = "Salvador Dalí";
         NewArt7.Price = "$90m";
-        NewArt7.Picture = "la_persistance_de_la_memoire.jpeg";
+        NewArt7.SelectedImage = "la_persistance_de_la_memoire.jpeg";
         NewArt7.Year = "1931";
 
         Art NewArt8 = new();
@@ -116,7 +114,7 @@ public partial class MainViewModel : BaseViewModel
         NewArt8.Description = "An intimate and moving depiction of a couple embracing in an idyllic landscape, symbolizing love and human connection";
         NewArt8.Author = "Pierre-Auguste Renoir";
         NewArt8.Price = "$80m";
-        NewArt8.Picture = "les_amoureux.jpg";
+        NewArt8.SelectedImage = "les_amoureux.jpg";
         NewArt8.Year = "1875";
 
 
@@ -155,24 +153,7 @@ public partial class MainViewModel : BaseViewModel
     private async Task AddArt()
     {
         IsBusy = true;
-
-        JSONServices MyService = new();
-
-         Art NewArt = new ();
-         NewArt.Title = "La Joconde";
-         NewArt.Description = "It depicts a half-body portrait, probably of the Florentine Lisa Gherardini";
-         NewArt.Author = "Leonardo Da Vinci";
-         NewArt.Price = "$260m";
-         NewArt.Picture = "la_joconde.jpg";
-         NewArt.Year = "1503-1506";
-
-         Globals.MyArts.Add(NewArt);
-         MyObservableArts.Add(NewArt);
-
         await Shell.Current.GoToAsync("AddArt", true);
-
-        await MyService.SetArts();
-
         IsBusy = false;
     }
 

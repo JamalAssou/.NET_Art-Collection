@@ -62,7 +62,7 @@
                                 Padding="10">
                             <StackLayout Orientation="Horizontal" VerticalOptions="Center">
                                 <ImageButton    HorizontalOptions="Start"
-                                                Source="{Binding Picture}"
+                                                Source="{Binding SelectedImage}"
                                                 Aspect="AspectFit"
                                                 HeightRequest="100"
                                                 Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MainViewModel}}, Path=GoToDetailsCommand}"

@@ -6,14 +6,19 @@ using System.Threading.Tasks;
 
 namespace MyApp.ViewModel;
 
-[QueryProperty(nameof(ArtTitle), "SelectedArt")]
+[QueryProperty(nameof(ArtTitle), "SelectedArtTitle")]
+// [QueryProperty(nameof(ArtPrice), "SelectedArtPrice")]
 public partial class DetailsViewModel: BaseViewModel
 {
     [ObservableProperty]
     string? artTitle;
-    /*string? artPrice;
+    /*[ObservableProperty]
+    string? artPrice;
+    [ObservableProperty]
     string? artDescription;
+    [ObservableProperty]
     string? artAuthor;
+    [ObservableProperty]
     string? artYear;*/
 
 }
