@@ -735,4 +735,4 @@ C:\GitHub\.NET_Art-Collection\MyApp\MyApp\obj\Debug\net8.0-windows10.0.19041.0\w
 C:\GitHub\.NET_Art-Collection\MyApp\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\les_amoureux.scale-100.jpg
 C:\GitHub\.NET_Art-Collection\MyApp\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\les_demoiselles_davignon.scale-100.jpg
 C:\GitHub\.NET_Art-Collection\MyApp\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\sunflowers.scale-100.jpg
-C:\GitHub\.NET_Art-Collection\MyApp\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\MyApp.csproj.Up2Date
+C:\github\.NET_Art-Collection\MyApp\MyApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\MyApp.csproj.CopyComplete

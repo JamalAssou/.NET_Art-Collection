@@ -1,1 +1,1 @@
-C:\GitHub\.NET_Art-Collection\MyApp\MyApp\MyApp.csproj;x64
+C:\github\.NET_Art-Collection\MyApp\MyApp\MyApp.csproj;x64

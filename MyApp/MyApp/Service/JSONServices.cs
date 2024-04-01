@@ -27,6 +27,24 @@ internal class JSONServices
             await Shell.Current.DisplayAlert("JSON load Error!", ex.Message, "OK");
         }
     }
+    internal async Task GetPossibleArtsCollection()
+    {
+        string filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "PossibleArtsCollection.json");
+
+        try
+        {
+            using var stream = File.Open(filePath, FileMode.Open);
+
+            using var reader = new StreamReader(stream);
+            var contents = await reader.ReadToEndAsync();
+            Globals.PossibleArtsCollection = JsonSerializer.Deserialize<List<Art>>(contents);
+
+        }
+        catch (Exception ex)
+        {
+            await Shell.Current.DisplayAlert("JSON load Error!", ex.Message, "OK");
+        }
+    }
 
     internal async Task  SetArts()
     {

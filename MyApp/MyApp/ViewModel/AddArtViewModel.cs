@@ -24,14 +24,16 @@ namespace MyApp.ViewModel
         public string description = "";
         [ObservableProperty]
         public string price = "";
+        [ObservableProperty]
+        public string picture = "";
 
-        public ImageSource _selectedImage;
+       /* public ImageSource _selectedImage;
 
         public ImageSource SelectedImage
         {
             get => _selectedImage;
             set => SetProperty(ref _selectedImage, value);
-        }
+        }*/
 
        /* private string _selectedImageFileName;
         * 
@@ -54,7 +56,7 @@ namespace MyApp.ViewModel
             myArt.Author = Author;
             myArt.Year = Year;
             myArt.Description = Description;
-            myArt.SelectedImage = SelectedImage;
+            myArt.Picture = Picture;
             // myArt.ImageFileName = SelectedImageFileName;
             myArt.Price = Price;
 
@@ -69,7 +71,7 @@ namespace MyApp.ViewModel
         }
 
 
-        // OPEN FOLDER
+       /* // OPEN FOLDER
         [RelayCommand]
         private async Task ImportImage()
         {
@@ -99,7 +101,7 @@ namespace MyApp.ViewModel
                 // Handle exception
                 await Shell.Current.DisplayAlert("Error", ex.Message, "OK");
             }
-        }
+        }*/
 
     }
 }

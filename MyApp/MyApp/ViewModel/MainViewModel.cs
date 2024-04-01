@@ -22,7 +22,23 @@ public partial class MainViewModel : BaseViewModel
         this.myScanner = new DeviceOrientationService();
         myScanner.ConfigureScanner();
         myScanner.SerialBuffer.Changed += OnBarCodeScanned;
-        FillPossibleArtsCollection();
+        LoadPossibleArtsCollection(); //On charge les elements qui peuvent etre scanné depuis le fichier Json 
+    }
+
+    private async Task LoadPossibleArtsCollection()
+    {
+        
+        JSONServices MyService = new();
+
+        await MyService.GetPossibleArtsCollection();//la methode qui recupere les element depuis le fichier json
+        
+        //debug
+        /*foreach (var art in Globals.PossibleArtsCollection)
+        {
+            CodeBar += art.Title + ";";
+        }*/
+
+       
     }
 
     public void RefreshPage()
@@ -34,100 +50,6 @@ public partial class MainViewModel : BaseViewModel
         }
     }
 
-    private void FillPossibleArtsCollection()
-    {
-        Art NewArt = new();
-        NewArt.Id = 0;
-        NewArt.Title = "La Joconde";
-        NewArt.Description = "It depicts a half-body portrait, probably of the Florentine Lisa Gherardini";
-        NewArt.Author = "Léonard de Vinci";
-        NewArt.Price = "$260m";
-        NewArt.SelectedImage = "la_joconde.jpg";
-        NewArt.Year = "1503-1506";
-
-        Art NewArt1 = new();
-        NewArt1.Id = 1;
-        NewArt1.Title = "Les Tournesols";
-        NewArt1.Description = "It depicts bouquets of sunflowers in vases";
-        NewArt1.Author = "Vincent van Gogh";
-        NewArt1.Price = "$14.9m";
-        NewArt1.SelectedImage = "sunflowers.jpg";
-        NewArt1.Year = "1887-1889";
-
-        Art NewArt2 = new();
-        NewArt2.Id = 2;
-        NewArt2.Title = "The Nightmare";
-        NewArt2.Description = "It shows a woman in deep sleep with her arms thrown below her, and with a demonic and ape-like incubus crouched on her chest";
-        NewArt2.Author = "Henry Fuseli";
-        NewArt2.Price = "$75.9m";
-        NewArt2.SelectedImage = "the_nightmare.jpg";
-        NewArt2.Year = "1781";
-
-        Art NewArt3 = new();
-        NewArt3.Id = 3;
-        NewArt3.Title = "The Scream";
-        NewArt3.Description = "Symbolizing the modern man swept away by a crisis of existential anguish";
-        NewArt3.Author = "Edvard Munch";
-        NewArt3.Price = "$119m";
-        NewArt3.SelectedImage = "the_scream.jpg";
-        NewArt3.Year = "1893-1917";
-        
-        Art NewArt4 = new();
-        NewArt4.Id = 4;
-        NewArt4.Title = "Guernica";
-        NewArt4.Description = "Powerful testimony to the horrors of the Spanish Civil War, expressing the ";
-        NewArt4.Author = "Pablo Picasso";
-        NewArt4.Price = "$200m";
-        NewArt4.SelectedImage = "guernica.jpg";
-        NewArt4.Year = "1937";
-        
-        Art NewArt5 = new();
-        NewArt5.Id = 5;
-        NewArt5.Title = "La Nuit étoilée";
-        NewArt5.Description = "Symbolizing the modern man swept away by a crisis of existential anguish";
-        NewArt5.Author = "Vincent van Gogh";
-        NewArt5.Price = "$119m";
-        NewArt5.SelectedImage = "la_nuit_etoilee.jpg";
-        NewArt5.Year = "1893-1917";
-        
-        Art NewArt6 = new();
-        NewArt6.Id = 6;
-        NewArt6.Title = "Les Demoiselles d'Avignon";
-        NewArt6.Description = "A revolutionary work that heralded Cubism, featuring distorted, angular figures in a brothel scene";
-        NewArt6.Author = "Pablo Picasso";
-        NewArt6.Price = "$200m";
-        NewArt6.SelectedImage = "les_demoiselles_davignon.jpg";
-        NewArt6.Year = "1907";
-        
-        Art NewArt7 = new();
-        NewArt7.Id = 7;
-        NewArt7.Title = "La Persistance de la Mémoire";
-        NewArt7.Description = "A surreal representation of soft watches in a desert landscape, exploring the concepts of time and reality";
-        NewArt7.Author = "Salvador Dalí";
-        NewArt7.Price = "$90m";
-        NewArt7.SelectedImage = "la_persistance_de_la_memoire.jpeg";
-        NewArt7.Year = "1931";
-
-        Art NewArt8 = new();
-        NewArt8.Id = 8;
-        NewArt8.Title = "Les Amoureux";
-        NewArt8.Description = "An intimate and moving depiction of a couple embracing in an idyllic landscape, symbolizing love and human connection";
-        NewArt8.Author = "Pierre-Auguste Renoir";
-        NewArt8.Price = "$80m";
-        NewArt8.SelectedImage = "les_amoureux.jpg";
-        NewArt8.Year = "1875";
-
-
-        Globals.PossibleArtsCollection.Add(NewArt);
-        Globals.PossibleArtsCollection.Add(NewArt1);
-        Globals.PossibleArtsCollection.Add(NewArt2);
-        Globals.PossibleArtsCollection.Add(NewArt3);
-        Globals.PossibleArtsCollection.Add(NewArt4);
-        Globals.PossibleArtsCollection.Add(NewArt5);
-        Globals.PossibleArtsCollection.Add(NewArt6);
-        Globals.PossibleArtsCollection.Add(NewArt7);
-        Globals.PossibleArtsCollection.Add(NewArt8);
-    }
 
     private void OnBarCodeScanned(object sender, EventArgs args)
     {
