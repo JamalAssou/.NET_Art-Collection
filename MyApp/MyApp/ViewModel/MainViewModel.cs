@@ -51,12 +51,13 @@ public partial class MainViewModel : BaseViewModel
     }
 
 
-    private void OnBarCodeScanned(object sender, EventArgs args)
+    private async void OnBarCodeScanned(object sender, EventArgs args)
     {
         DeviceOrientationService.QueueBuffer MyLocalBuffer = (DeviceOrientationService.QueueBuffer)sender;
 
         
         CodeBar = MyLocalBuffer.Dequeue().ToString();
+        JSONServices MyService = new();
 
 
         foreach (var Art in Globals.PossibleArtsCollection)
@@ -65,6 +66,7 @@ public partial class MainViewModel : BaseViewModel
             if (CodeBar.Equals(Art.Id.ToString()))
             {
                 Globals.MyArts.Add(Art);
+                await MyService.SetArts();
                 MyObservableArts.Add(Art);
             }
         }

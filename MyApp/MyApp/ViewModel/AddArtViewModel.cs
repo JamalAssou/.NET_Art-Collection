@@ -14,6 +14,7 @@ namespace MyApp.ViewModel
     public partial class AddArtViewModel : BaseViewModel
     {
         int cptId = 9;
+
         [ObservableProperty]
         public string title = "";
         [ObservableProperty]
@@ -45,11 +46,12 @@ namespace MyApp.ViewModel
             myArt.Picture = Picture;
             myArt.Price = Price;
                 
+            cptId++;
 
             Globals.MyArts.Add(myArt);
             Globals.PossibleArtsCollection.Add(myArt);
 
-            cptId++;
+            
             await MyService.SetArts();
             await MyService.SetPossibleArtsCollection();
 
