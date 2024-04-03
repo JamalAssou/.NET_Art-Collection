@@ -3,6 +3,7 @@
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"             
              xmlns:viewmodel="clr-namespace:MyApp.ViewModel"           
              xmlns:model="clr-namespace:MyApp.Model"
+             Title="Version 1.0"
              x:Class="MyApp.View.MainPage">
 
     <ScrollView>

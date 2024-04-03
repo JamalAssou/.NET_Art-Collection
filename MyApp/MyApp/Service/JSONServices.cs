@@ -46,6 +46,24 @@ internal class JSONServices
         }
     }
 
+    internal async Task SetPossibleArtsCollection()
+    {
+        string filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "PossibleArtsCollection.json");
+
+        try
+        {
+            if (File.Exists(filePath)) File.Delete(filePath);
+            using FileStream fileStream = File.Create(filePath);
+
+            await JsonSerializer.SerializeAsync(fileStream, Globals.PossibleArtsCollection);
+            await fileStream.DisposeAsync();
+        }
+        catch (Exception ex)
+        {
+            await Shell.Current.DisplayAlert("JSON save Error!", ex.Message, "OK");
+        }
+    }
+
     internal async Task  SetArts()
     {
         string filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "Arts.json");

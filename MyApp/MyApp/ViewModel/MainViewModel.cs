@@ -33,10 +33,10 @@ public partial class MainViewModel : BaseViewModel
         await MyService.GetPossibleArtsCollection();//la methode qui recupere les element depuis le fichier json
         
         //debug
-        /*foreach (var art in Globals.PossibleArtsCollection)
+        foreach (var art in Globals.PossibleArtsCollection)
         {
-            CodeBar += art.Title + ";";
-        }*/
+            CodeBar += art.Id + ";";
+        }
 
        
     }

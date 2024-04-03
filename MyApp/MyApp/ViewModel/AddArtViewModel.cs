@@ -13,7 +13,7 @@ namespace MyApp.ViewModel
 {
     public partial class AddArtViewModel : BaseViewModel
     {
-
+        int cptId = 9;
         [ObservableProperty]
         public string title = "";
         [ObservableProperty]
@@ -27,21 +27,6 @@ namespace MyApp.ViewModel
         [ObservableProperty]
         public string picture = "";
 
-       /* public ImageSource _selectedImage;
-
-        public ImageSource SelectedImage
-        {
-            get => _selectedImage;
-            set => SetProperty(ref _selectedImage, value);
-        }*/
-
-       /* private string _selectedImageFileName;
-        * 
-        public string SelectedImageFileName
-        {
-            get => _selectedImageFileName;
-            set => SetProperty(ref _selectedImageFileName, value);
-        }*/
 
 
         [RelayCommand]
@@ -52,56 +37,27 @@ namespace MyApp.ViewModel
             JSONServices MyService = new();
 
             Art myArt = new Art();
+            myArt.Id = cptId;
             myArt.Title = Title;
             myArt.Author = Author;
             myArt.Year = Year;
             myArt.Description = Description;
             myArt.Picture = Picture;
-            // myArt.ImageFileName = SelectedImageFileName;
             myArt.Price = Price;
+                
 
             Globals.MyArts.Add(myArt);
+            Globals.PossibleArtsCollection.Add(myArt);
 
+            cptId++;
             await MyService.SetArts();
+            await MyService.SetPossibleArtsCollection();
 
             await Shell.Current.GoToAsync("//MainPage", true); //pour naviguer dans une autre fenetre
 
             IsBusy = false;
 
         }
-
-
-       /* // OPEN FOLDER
-        [RelayCommand]
-        private async Task ImportImage()
-        {
-            try
-            {
-                var results = await FilePicker.PickMultipleAsync();
-
-                if (results != null && results.Any())
-                {
-                    foreach (var result in results)
-                    {
-                        var stream = await result.OpenReadAsync();
-                        using var memoryStream = new MemoryStream();
-                        await stream.CopyToAsync(memoryStream);
-                        SelectedImage = ImageSource.FromStream(() => memoryStream);
-                        SelectedImage = result.FileName;
-
-
-                        // DEBUG
-                        string fileName = result.FileName;
-                        await Shell.Current.DisplayAlert(":)", $"Selected image file name: {fileName}", "OK");
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                // Handle exception
-                await Shell.Current.DisplayAlert("Error", ex.Message, "OK");
-            }
-        }*/
 
     }
 }
