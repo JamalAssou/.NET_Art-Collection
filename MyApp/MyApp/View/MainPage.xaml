@@ -38,6 +38,16 @@
                         Padding="25,10"
                         BackgroundColor="#F7A711" TextColor="#1A3F6B"
                         IsEnabled="{Binding IsNotBusy}"/>
+                <Button Text="Show Statistics" 
+                        Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MainViewModel}}, Path=ShowStatisticsCommand}"
+                        HorizontalOptions="Center"
+                        BorderWidth="1"             
+                        FontAttributes="Bold" 
+                        FontSize="25" 
+                        FontFamily="MuseoSansRounded300"
+                        Padding="25,10"
+                        BackgroundColor="#F7A711" TextColor="#1A3F6B"
+                        IsEnabled="{Binding IsNotBusy}"/>
                 <Button Text="Show Art Added/Scanned" 
                         Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MainViewModel}}, Path=LoadJSONCommand}"
                         HorizontalOptions="Center"

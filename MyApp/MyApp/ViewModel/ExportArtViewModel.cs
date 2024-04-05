@@ -12,7 +12,7 @@ namespace MyApp.ViewModel
     public partial class ExportArtViewModel : BaseViewModel
     {
         [ObservableProperty]
-        public bool checkBox_Id; //On met en miniscule ici quand on l'observe et plus tard on le met en majuscule
+        public bool checkBox_Id; // On met en miniscule ici quand on l'observe et plus tard on le met en majuscule
         [ObservableProperty]
         public bool checkBox_Title;
         [ObservableProperty]
@@ -35,8 +35,7 @@ namespace MyApp.ViewModel
 
             foreach (var art in Globals.MyArts)
             {
-
-                if (CheckBox_Id) txt += art.Id + ";";//ici on commence par une majuscule
+                if (CheckBox_Id) txt += art.Id + ";"; // ici on commence par une majuscule
                 if (CheckBox_Title) txt += art.Title + ";";
                 if (CheckBox_Description) txt += art.Description + ";";
                 if (CheckBox_Author) txt += art.Author + ";";
@@ -59,8 +58,7 @@ namespace MyApp.ViewModel
             {
                 await Shell.Current.DisplayAlert("Export", "Export failed...", "OK");
             }
-        
-            
+          
         }
 
     }

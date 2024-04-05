@@ -16,11 +16,5 @@ public class Art
     public string? Year { get; set; }
     public string? Picture { get; set; }
 
-   // [JsonIgnore] // pour ignorer le fait de save l'image dans le JSON car impossible...
-   // public ImageSource? SelectedImage { get; set; }
-
-
-    // public string? ImageFileName { get; set; } 
-
 }
 

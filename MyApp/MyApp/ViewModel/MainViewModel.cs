@@ -22,7 +22,7 @@ public partial class MainViewModel : BaseViewModel
         this.myScanner = new DeviceOrientationService();
         myScanner.ConfigureScanner();
         myScanner.SerialBuffer.Changed += OnBarCodeScanned;
-        LoadPossibleArtsCollection(); //On charge les elements qui peuvent etre scanné depuis le fichier Json 
+        LoadPossibleArtsCollection(); // On charge les elements qui peuvent etre scanné depuis le fichier Json 
     }
 
     private async Task LoadPossibleArtsCollection()
@@ -30,7 +30,7 @@ public partial class MainViewModel : BaseViewModel
         
         JSONServices MyService = new();
 
-        await MyService.GetPossibleArtsCollection();//la methode qui recupere les element depuis le fichier json
+        await MyService.GetPossibleArtsCollection(); // la méthode qui récupere les élements depuis le fichier json
         
         //debug
         foreach (var art in Globals.PossibleArtsCollection)
@@ -103,6 +103,14 @@ public partial class MainViewModel : BaseViewModel
 
     }
 
+    [RelayCommand]
+    private async Task ShowStatistics()
+    {
+        IsBusy = true;
+        await Shell.Current.GoToAsync("Statistics", true);
+        IsBusy = false;
+
+    }
 
     [RelayCommand]
     private async Task LoadJSON()

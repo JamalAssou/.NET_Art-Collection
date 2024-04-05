@@ -13,7 +13,7 @@ namespace MyApp.ViewModel
 {
     public partial class AddArtViewModel : BaseViewModel
     {
-        int cptId = 9;
+        public int cptId = 9;
 
         [ObservableProperty]
         public string title = "";
@@ -28,10 +28,8 @@ namespace MyApp.ViewModel
         [ObservableProperty]
         public string picture = "";
 
-
-
         [RelayCommand]
-        private async Task AddArtFinal()
+        private async Task AddArt() 
         {
             IsBusy = true;
 
@@ -55,7 +53,7 @@ namespace MyApp.ViewModel
             await MyService.SetArts();
             await MyService.SetPossibleArtsCollection();
 
-            await Shell.Current.GoToAsync("//MainPage", true); //pour naviguer dans une autre fenetre
+            await Shell.Current.GoToAsync("//MainPage", true); // pour retourner sur la page d'accueil
 
             IsBusy = false;
 

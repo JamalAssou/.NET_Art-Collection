@@ -10,10 +10,10 @@ public partial class MainPage : ContentPage
         BindingContext= viewModel;
 	}
 
-    protected override void OnNavigatedTo(NavigatedToEventArgs args)
+    protected override void OnNavigatedTo(NavigatedToEventArgs args) // méthode apellée lorsque on revient en arriére
     {
         BindingContext = null;
-        viewModel.RefreshPage();  // à developper
+        viewModel.RefreshPage();  
         BindingContext = viewModel;
     }
 }

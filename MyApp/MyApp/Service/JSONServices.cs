@@ -9,6 +9,7 @@ namespace MyApp.Service;
 
 internal class JSONServices
 {
+
     internal async Task GetArts()
     {     
         string filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "Arts.json");
@@ -27,6 +28,25 @@ internal class JSONServices
             await Shell.Current.DisplayAlert("JSON load Error!", ex.Message, "OK");
         }
     }
+
+    internal async Task SetArts()
+    {
+        string filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "Arts.json");
+
+        try
+        {
+            if (File.Exists(filePath)) File.Delete(filePath);
+            using FileStream fileStream = File.Create(filePath);
+
+            await JsonSerializer.SerializeAsync(fileStream, Globals.MyArts);
+            await fileStream.DisposeAsync();
+        }
+        catch (Exception ex)
+        {
+            await Shell.Current.DisplayAlert("JSON save Error!", ex.Message, "OK");
+        }
+    }
+
     internal async Task GetPossibleArtsCollection()
     {
         string filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "PossibleArtsCollection.json");
@@ -56,24 +76,6 @@ internal class JSONServices
             using FileStream fileStream = File.Create(filePath);
 
             await JsonSerializer.SerializeAsync(fileStream, Globals.PossibleArtsCollection);
-            await fileStream.DisposeAsync();
-        }
-        catch (Exception ex)
-        {
-            await Shell.Current.DisplayAlert("JSON save Error!", ex.Message, "OK");
-        }
-    }
-
-    internal async Task  SetArts()
-    {
-        string filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "Arts.json");
-        
-        try
-        {
-            if (File.Exists(filePath)) File.Delete(filePath); 
-            using FileStream fileStream = File.Create(filePath);
-
-            await JsonSerializer.SerializeAsync(fileStream, Globals.MyArts);
             await fileStream.DisposeAsync();
         }
         catch (Exception ex)

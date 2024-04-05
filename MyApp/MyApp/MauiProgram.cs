@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Microcharts.Maui;
+using Microsoft.Extensions.Logging;
 
 namespace MyApp
 {
@@ -9,6 +10,7 @@ namespace MyApp
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
+                .UseMicrocharts()
                 .UseMauiCommunityToolkit()
                 .ConfigureFonts(fonts =>
                 {
@@ -31,7 +33,9 @@ namespace MyApp
             
             builder.Services.AddTransient<AddArt>();
             builder.Services.AddTransient<AddArtViewModel>();
-            
+
+            builder.Services.AddTransient<Statistics>();
+            builder.Services.AddTransient<StatisticsViewModel>();
 
             builder.Services.AddTransient<JSONServices>();
 

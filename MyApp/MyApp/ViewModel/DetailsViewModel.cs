@@ -12,13 +12,5 @@ public partial class DetailsViewModel: BaseViewModel
 {
     [ObservableProperty]
     string? artTitle;
-    /*[ObservableProperty]
-    string? artPrice;
-    [ObservableProperty]
-    string? artDescription;
-    [ObservableProperty]
-    string? artAuthor;
-    [ObservableProperty]
-    string? artYear;*/
 
 }
