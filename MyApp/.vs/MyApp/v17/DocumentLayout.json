@@ -3,16 +3,40 @@
   "WorkspaceRootPath": "C:\\GitHub\\.NET_Art-Collection\\MyApp\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{CD6B419F-F035-4EDB-90AA-2B19B7C550C2}|MyApp\\MyApp.csproj|c:\\github\\.net_art-collection\\myapp\\myapp\\viewmodel\\addartviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CD6B419F-F035-4EDB-90AA-2B19B7C550C2}|MyApp\\MyApp.csproj|solutionrelative:myapp\\viewmodel\\addartviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{CD6B419F-F035-4EDB-90AA-2B19B7C550C2}|MyApp\\MyApp.csproj|c:\\github\\.net_art-collection\\myapp\\myapp\\view\\statistics.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{CD6B419F-F035-4EDB-90AA-2B19B7C550C2}|MyApp\\MyApp.csproj|solutionrelative:myapp\\view\\statistics.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD6B419F-F035-4EDB-90AA-2B19B7C550C2}|MyApp\\MyApp.csproj|c:\\github\\.net_art-collection\\myapp\\myapp\\view\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{CD6B419F-F035-4EDB-90AA-2B19B7C550C2}|MyApp\\MyApp.csproj|solutionrelative:myapp\\view\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD6B419F-F035-4EDB-90AA-2B19B7C550C2}|MyApp\\MyApp.csproj|c:\\github\\.net_art-collection\\myapp\\myapp\\view\\exportart.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{CD6B419F-F035-4EDB-90AA-2B19B7C550C2}|MyApp\\MyApp.csproj|solutionrelative:myapp\\view\\exportart.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD6B419F-F035-4EDB-90AA-2B19B7C550C2}|MyApp\\MyApp.csproj|c:\\github\\.net_art-collection\\myapp\\myapp\\view\\detailspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{CD6B419F-F035-4EDB-90AA-2B19B7C550C2}|MyApp\\MyApp.csproj|solutionrelative:myapp\\view\\detailspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD6B419F-F035-4EDB-90AA-2B19B7C550C2}|MyApp\\MyApp.csproj|c:\\github\\.net_art-collection\\myapp\\myapp\\view\\addart.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{CD6B419F-F035-4EDB-90AA-2B19B7C550C2}|MyApp\\MyApp.csproj|solutionrelative:myapp\\view\\addart.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD6B419F-F035-4EDB-90AA-2B19B7C550C2}|MyApp\\MyApp.csproj|c:\\github\\.net_art-collection\\myapp\\myapp\\viewmodel\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CD6B419F-F035-4EDB-90AA-2B19B7C550C2}|MyApp\\MyApp.csproj|solutionrelative:myapp\\viewmodel\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CD6B419F-F035-4EDB-90AA-2B19B7C550C2}|MyApp\\MyApp.csproj|c:\\github\\.net_art-collection\\myapp\\myapp\\viewmodel\\statisticsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CD6B419F-F035-4EDB-90AA-2B19B7C550C2}|MyApp\\MyApp.csproj|solutionrelative:myapp\\viewmodel\\statisticsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CD6B419F-F035-4EDB-90AA-2B19B7C550C2}|MyApp\\MyApp.csproj|c:\\github\\.net_art-collection\\myapp\\myapp\\view\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{CD6B419F-F035-4EDB-90AA-2B19B7C550C2}|MyApp\\MyApp.csproj|solutionrelative:myapp\\view\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{CD6B419F-F035-4EDB-90AA-2B19B7C550C2}|MyApp\\MyApp.csproj|c:\\github\\.net_art-collection\\myapp\\myapp\\view\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CD6B419F-F035-4EDB-90AA-2B19B7C550C2}|MyApp\\MyApp.csproj|solutionrelative:myapp\\view\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -55,15 +79,87 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Statistics.xaml",
-              "DocumentMoniker": "C:\\GitHub\\.NET_Art-Collection\\MyApp\\MyApp\\View\\Statistics.xaml",
-              "RelativeDocumentMoniker": "MyApp\\View\\Statistics.xaml",
-              "ToolTip": "C:\\GitHub\\.NET_Art-Collection\\MyApp\\MyApp\\View\\Statistics.xaml",
-              "RelativeToolTip": "MyApp\\View\\Statistics.xaml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAKAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-04-05T08:28:42.483Z",
+              "Title": "AddArtViewModel.cs",
+              "DocumentMoniker": "C:\\GitHub\\.NET_Art-Collection\\MyApp\\MyApp\\ViewModel\\AddArtViewModel.cs",
+              "RelativeDocumentMoniker": "MyApp\\ViewModel\\AddArtViewModel.cs",
+              "ToolTip": "C:\\GitHub\\.NET_Art-Collection\\MyApp\\MyApp\\ViewModel\\AddArtViewModel.cs",
+              "RelativeToolTip": "MyApp\\ViewModel\\AddArtViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-07T21:44:36.119Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ExportArt.xaml",
+              "DocumentMoniker": "C:\\GitHub\\.NET_Art-Collection\\MyApp\\MyApp\\View\\ExportArt.xaml",
+              "RelativeDocumentMoniker": "MyApp\\View\\ExportArt.xaml",
+              "ToolTip": "C:\\GitHub\\.NET_Art-Collection\\MyApp\\MyApp\\View\\ExportArt.xaml",
+              "RelativeToolTip": "MyApp\\View\\ExportArt.xaml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-04-07T21:44:33.132Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DetailsPage.xaml",
+              "DocumentMoniker": "C:\\GitHub\\.NET_Art-Collection\\MyApp\\MyApp\\View\\DetailsPage.xaml",
+              "RelativeDocumentMoniker": "MyApp\\View\\DetailsPage.xaml",
+              "ToolTip": "C:\\GitHub\\.NET_Art-Collection\\MyApp\\MyApp\\View\\DetailsPage.xaml",
+              "RelativeToolTip": "MyApp\\View\\DetailsPage.xaml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-04-07T21:44:32.51Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AddArt.xaml",
+              "DocumentMoniker": "C:\\GitHub\\.NET_Art-Collection\\MyApp\\MyApp\\View\\AddArt.xaml",
+              "RelativeDocumentMoniker": "MyApp\\View\\AddArt.xaml",
+              "ToolTip": "C:\\GitHub\\.NET_Art-Collection\\MyApp\\MyApp\\View\\AddArt.xaml",
+              "RelativeToolTip": "MyApp\\View\\AddArt.xaml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-04-07T21:44:27.165Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "StatisticsViewModel.cs",
+              "DocumentMoniker": "C:\\GitHub\\.NET_Art-Collection\\MyApp\\MyApp\\ViewModel\\StatisticsViewModel.cs",
+              "RelativeDocumentMoniker": "MyApp\\ViewModel\\StatisticsViewModel.cs",
+              "ToolTip": "C:\\GitHub\\.NET_Art-Collection\\MyApp\\MyApp\\ViewModel\\StatisticsViewModel.cs",
+              "RelativeToolTip": "MyApp\\ViewModel\\StatisticsViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAFIAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-07T21:34:14.388Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MainViewModel.cs",
+              "DocumentMoniker": "C:\\GitHub\\.NET_Art-Collection\\MyApp\\MyApp\\ViewModel\\MainViewModel.cs",
+              "RelativeDocumentMoniker": "MyApp\\ViewModel\\MainViewModel.cs",
+              "ToolTip": "C:\\GitHub\\.NET_Art-Collection\\MyApp\\MyApp\\ViewModel\\MainViewModel.cs",
+              "RelativeToolTip": "MyApp\\ViewModel\\MainViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-07T15:06:48.588Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "MainPage.xaml.cs",
+              "DocumentMoniker": "C:\\GitHub\\.NET_Art-Collection\\MyApp\\MyApp\\View\\MainPage.xaml.cs",
+              "RelativeDocumentMoniker": "MyApp\\View\\MainPage.xaml.cs",
+              "ToolTip": "C:\\GitHub\\.NET_Art-Collection\\MyApp\\MyApp\\View\\MainPage.xaml.cs",
+              "RelativeToolTip": "MyApp\\View\\MainPage.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-07T15:06:42.975Z"
             },
             {
               "$type": "Document",
@@ -73,23 +169,21 @@
               "RelativeDocumentMoniker": "MyApp\\View\\MainPage.xaml",
               "ToolTip": "C:\\GitHub\\.NET_Art-Collection\\MyApp\\MyApp\\View\\MainPage.xaml",
               "RelativeToolTip": "MyApp\\View\\MainPage.xaml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAA0AAAA",
+              "ViewState": "AQIAAEUAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-04-05T08:17:11.162Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-07T15:06:37.803Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "StatisticsViewModel.cs",
-              "DocumentMoniker": "C:\\GitHub\\.NET_Art-Collection\\MyApp\\MyApp\\ViewModel\\StatisticsViewModel.cs",
-              "RelativeDocumentMoniker": "MyApp\\ViewModel\\StatisticsViewModel.cs",
-              "ToolTip": "C:\\GitHub\\.NET_Art-Collection\\MyApp\\MyApp\\ViewModel\\StatisticsViewModel.cs",
-              "RelativeToolTip": "MyApp\\ViewModel\\StatisticsViewModel.cs",
-              "ViewState": "AQIAAAQAAAAAAAAAAAAuwAsAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-03T09:41:00.865Z",
-              "EditorCaption": ""
+              "Title": "Statistics.xaml",
+              "DocumentMoniker": "C:\\GitHub\\.NET_Art-Collection\\MyApp\\MyApp\\View\\Statistics.xaml",
+              "RelativeDocumentMoniker": "MyApp\\View\\Statistics.xaml",
+              "ToolTip": "C:\\GitHub\\.NET_Art-Collection\\MyApp\\MyApp\\View\\Statistics.xaml",
+              "RelativeToolTip": "MyApp\\View\\Statistics.xaml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAALAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-04-07T15:03:08.832Z"
             }
           ]
         },

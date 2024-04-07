@@ -4,8 +4,7 @@
              xmlns:model="clr-namespace:MyApp.Model"
              xmlns:viewmodel="clr-namespace:MyApp.ViewModel"  
              xmlns:micro="clr-namespace:Microcharts.Maui;assembly=Microcharts.Maui"
-             x:Class="MyApp.View.Statistics"
-             Title="Statistics">
+             x:Class="MyApp.View.Statistics">
     <Grid ColumnDefinitions="*,auto,*" RowDefinitions="*,auto,*">
         <Grid Grid.Row="2">
             <micro:ChartView Chart="{Binding MyObservableChart}"/>

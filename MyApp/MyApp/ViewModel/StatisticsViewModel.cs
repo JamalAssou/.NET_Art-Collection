@@ -20,62 +20,62 @@ public partial class StatisticsViewModel : BaseViewModel
        {
            new ChartEntry(51)
            {
-               Label = "S1",
-               ValueLabel="51",
+               Label = "La Joconde",
+               ValueLabel="$260m",
                Color = SKColor.Parse("#b455b6")
            },
            new ChartEntry(28)
            {
-               Label = "S2",
-               ValueLabel= "28",
+               Label = "Les Tournesols",
+               ValueLabel= "$14.9m",
                Color = SKColor.Parse("#b455b6")
            },
            new ChartEntry(35)
            {
-               Label = "S3",
-               ValueLabel="35",
+               Label = "The Nightmare",
+               ValueLabel="$75.9m",
                Color = SKColor.Parse("#b455b6")
            },
            new ChartEntry(47)
            {
-               Label = "S4",
-               ValueLabel="47",
+               Label = "The Scream",
+               ValueLabel="$119m",
                Color = SKColor.Parse("#b455b6")
            },
            new ChartEntry(64)
            {
-               Label = "S5",
-               ValueLabel="64",
+               Label = "Guernica",
+               ValueLabel="$200m",
                Color = SKColor.Parse("#b455b6")
            },
            new ChartEntry(57)
            {
-               Label = "S6",
-               ValueLabel="64",
+               Label = "La Nuit Etoilée",
+               ValueLabel="$119m",
                Color = SKColor.Parse("#b455b6")
            },
            new ChartEntry(22)
            {
-               Label = "S7",
-               ValueLabel="22",
+               Label = "Les Demoiselles d'Avignon",
+               ValueLabel="$200m",
                Color = SKColor.Parse("#b455b6")
            },
            new ChartEntry(24)
            {
-               Label = "S8",
-               ValueLabel="24",
+               Label = "La Persistance de la Mémoire",
+               ValueLabel="$90m",
                Color = SKColor.Parse("#b455b6")
            },
            new ChartEntry(48)
            {
-               Label = "S9",
-               ValueLabel="48",
+               Label = "Les Amoureux",
+               ValueLabel="$80m",
                Color = SKColor.Parse("#b455b6")
            },
            new ChartEntry(87)
            {
-               Label = "S10",
-               ValueLabel="87",
+               Label = "Abstracktes Bild",
+               ValueLabel="$46m",
                Color = SKColor.Parse("#b455b6")
            }
        };

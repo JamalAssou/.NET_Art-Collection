@@ -13,7 +13,7 @@ namespace MyApp.ViewModel
 {
     public partial class AddArtViewModel : BaseViewModel
     {
-        public int cptId = 9;
+        public int cptId = 10;
 
         [ObservableProperty]
         public string title = "";

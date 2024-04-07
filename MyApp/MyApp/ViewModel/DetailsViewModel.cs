@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 namespace MyApp.ViewModel;
 
 [QueryProperty(nameof(ArtTitle), "SelectedArtTitle")]
-// [QueryProperty(nameof(ArtPrice), "SelectedArtPrice")]
 public partial class DetailsViewModel: BaseViewModel
 {
     [ObservableProperty]

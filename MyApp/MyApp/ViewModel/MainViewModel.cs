@@ -17,6 +17,7 @@ public partial class MainViewModel : BaseViewModel
 
     [ObservableProperty]
     string? codeBar;
+
     public MainViewModel()
     {
         this.myScanner = new DeviceOrientationService();
@@ -26,19 +27,16 @@ public partial class MainViewModel : BaseViewModel
     }
 
     private async Task LoadPossibleArtsCollection()
-    {
-        
+    {      
         JSONServices MyService = new();
 
         await MyService.GetPossibleArtsCollection(); // la méthode qui récupere les élements depuis le fichier json
         
-        //debug
+        /*debug
         foreach (var art in Globals.PossibleArtsCollection)
         {
             CodeBar += art.Id + ";";
-        }
-
-       
+        }*/  
     }
 
     public void RefreshPage()
@@ -50,19 +48,15 @@ public partial class MainViewModel : BaseViewModel
         }
     }
 
-
     private async void OnBarCodeScanned(object sender, EventArgs args)
     {
         DeviceOrientationService.QueueBuffer MyLocalBuffer = (DeviceOrientationService.QueueBuffer)sender;
-
         
         CodeBar = MyLocalBuffer.Dequeue().ToString();
         JSONServices MyService = new();
 
-
         foreach (var Art in Globals.PossibleArtsCollection)
         {
-            
             if (CodeBar.Equals(Art.Id.ToString()))
             {
                 Globals.MyArts.Add(Art);
@@ -100,8 +94,8 @@ public partial class MainViewModel : BaseViewModel
         IsBusy = true;
         await Shell.Current.GoToAsync("ExportArt", true);
         IsBusy = false;
-
     }
+
 
     [RelayCommand]
     private async Task ShowStatistics()
@@ -109,8 +103,8 @@ public partial class MainViewModel : BaseViewModel
         IsBusy = true;
         await Shell.Current.GoToAsync("Statistics", true);
         IsBusy = false;
-
     }
+
 
     [RelayCommand]
     private async Task LoadJSON()

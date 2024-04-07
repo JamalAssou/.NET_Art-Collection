@@ -5,8 +5,20 @@
              xmlns:viewmodel="clr-namespace:MyApp.ViewModel"  
              xmlns:model="clr-namespace:MyApp.Model">
     <StackLayout Padding="20">
-        <Label Text="Add Art" FontSize="Large" FontFamily="MuseoSansRounded300" HorizontalOptions="Center" Margin="0,0,0,20"/>
-
+        <Frame Grid.Row="0"
+               BackgroundColor="#F7A711"
+               CornerRadius="5"
+               Margin="0,0,0,30"
+               Padding="10">
+            <Label Text="Add Art"
+                   TextColor="#1A3F6B"
+                   HorizontalOptions="Center"
+                   VerticalOptions="CenterAndExpand"
+                   FontSize="Large"
+                   FontFamily="MuseoSansRounded300"
+                   FontAttributes="Bold"/>
+        </Frame>
+        
         <Entry Placeholder="Title" FontFamily="MuseoSansRounded300" Text="{Binding Title}" x:Name="Title" Margin="0,0,0,10"/>
         <Entry Placeholder="Artist" FontFamily="MuseoSansRounded300" Text="{Binding Author}" x:Name="Author" Margin="0,0,0,10"/>
         <Entry Placeholder="Year" FontFamily="MuseoSansRounded300" Text="{Binding Year}" Keyboard="Numeric" x:Name="Year" Margin="0,0,0,10"/>
@@ -21,6 +33,7 @@
                 BorderWidth="1" 
                 FontAttributes="Bold" 
                 FontSize="20" 
+                Margin="0,20,0,0"
                 FontFamily="MuseoSansRounded300"
                 Padding="25,10"
                 BackgroundColor="#F7A711" BorderColor="Transparent" TextColor="#1A3F6B"
