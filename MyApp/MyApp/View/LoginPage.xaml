@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyApp.View.LoginPage"
+             xmlns:viewmodel="clr-namespace:MyApp.ViewModel"           
+             xmlns:model="clr-namespace:MyApp.Model"
+             Title="LoginPage">
+    <VerticalStackLayout>
+        <Label 
+            Text="Welcome to .NET MAUI!"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <Entry Placeholder="Email" FontFamily="MuseoSansRounded300" Text="{Binding Email}" x:Name="Email" Margin="0,0,0,10"/>
+        <Entry Placeholder="Password" FontFamily="MuseoSansRounded300" Text="{Binding Password}" x:Name="Password" Margin="0,0,0,10"/>
+
+        <Button Text="Login" 
+           Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:LoginViewModel}}, Path=LoginCommand}"
+           HorizontalOptions="Center"
+           VerticalOptions="End"
+           BorderWidth="1" 
+           FontAttributes="Bold" 
+           FontSize="20" 
+           Margin="0,20,0,0"
+           FontFamily="MuseoSansRounded300"
+           Padding="25,10"
+           BackgroundColor="#F7A711" BorderColor="Transparent" TextColor="#1A3F6B"
+           IsEnabled="{Binding IsNotBusy}"/>
+        
+        <Button Text="Register" 
+        Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:LoginViewModel}}, Path=RegisterCallCommand}"
+        HorizontalOptions="Center"
+        BorderWidth="1"             
+        FontAttributes="Bold" 
+        FontSize="25" 
+        FontFamily="MuseoSansRounded300"
+        Padding="25,10"
+        BackgroundColor="#F7A711" TextColor="#1A3F6B"
+        IsEnabled="{Binding IsNotBusy}"/>
+    </VerticalStackLayout>
+</ContentPage>

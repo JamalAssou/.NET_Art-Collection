@@ -1,5 +1,7 @@
 ﻿using Microcharts.Maui;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using MyApp.View;
 
 namespace MyApp
 {
@@ -34,10 +36,26 @@ namespace MyApp
             builder.Services.AddTransient<AddArt>();
             builder.Services.AddTransient<AddArtViewModel>();
 
+            //route pour la page de DB
+            builder.Services.AddTransient<DBViewModel>();
+            builder.Services.AddTransient<DbPage>();
+
             builder.Services.AddTransient<Statistics>();
             builder.Services.AddTransient<StatisticsViewModel>();
 
+            //login page
+            builder.Services.AddTransient<LoginPage>();
+            builder.Services.AddTransient<LoginViewModel>();
+            
+            //register page
+            builder.Services.AddTransient<RegisterPage>();
+            builder.Services.AddTransient<RegisterViewModel>();
+
             builder.Services.AddTransient<JSONServices>();
+
+            //db
+            builder.Services.AddDbContext<DataAccesServices>(e => 
+            e.UseSqlServer($"Server=(localdB)\\MSSQLLocalDB;DataBase=MyDataBase;Trusted_Connection=True"));
 
             return builder.Build();
         }

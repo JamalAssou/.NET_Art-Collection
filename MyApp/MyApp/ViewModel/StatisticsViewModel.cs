@@ -1,94 +1,64 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microcharts;
+using Microsoft.Maui.Controls.PlatformConfiguration;
 using SkiaSharp;
 
-namespace MyApp.ViewModel;
 
-public partial class StatisticsViewModel : BaseViewModel
+namespace MyApp.ViewModel
 {
-    [ObservableProperty]
-    string? animalName;
-
-    [ObservableProperty]
-    public Chart myObservableChart = new BarChart();
-
-    ChartEntry[] entries = new[]
-       {
-           new ChartEntry(51)
-           {
-               Label = "La Joconde",
-               ValueLabel="$260m",
-               Color = SKColor.Parse("#b455b6")
-           },
-           new ChartEntry(28)
-           {
-               Label = "Les Tournesols",
-               ValueLabel= "$14.9m",
-               Color = SKColor.Parse("#b455b6")
-           },
-           new ChartEntry(35)
-           {
-               Label = "The Nightmare",
-               ValueLabel="$75.9m",
-               Color = SKColor.Parse("#b455b6")
-           },
-           new ChartEntry(47)
-           {
-               Label = "The Scream",
-               ValueLabel="$119m",
-               Color = SKColor.Parse("#b455b6")
-           },
-           new ChartEntry(64)
-           {
-               Label = "Guernica",
-               ValueLabel="$200m",
-               Color = SKColor.Parse("#b455b6")
-           },
-           new ChartEntry(57)
-           {
-               Label = "La Nuit Etoilée",
-               ValueLabel="$119m",
-               Color = SKColor.Parse("#b455b6")
-           },
-           new ChartEntry(22)
-           {
-               Label = "Les Demoiselles d'Avignon",
-               ValueLabel="$200m",
-               Color = SKColor.Parse("#b455b6")
-           },
-           new ChartEntry(24)
-           {
-               Label = "La Persistance de la Mémoire",
-               ValueLabel="$90m",
-               Color = SKColor.Parse("#b455b6")
-           },
-           new ChartEntry(48)
-           {
-               Label = "Les Amoureux",
-               ValueLabel="$80m",
-               Color = SKColor.Parse("#b455b6")
-           },
-           new ChartEntry(87)
-           {
-               Label = "Abstracktes Bild",
-               ValueLabel="$46m",
-               Color = SKColor.Parse("#b455b6")
-           }
-       };
-
-    public StatisticsViewModel()
+    public partial class StatisticsViewModel : BaseViewModel
     {
-        Chart myChart = new BarChart
+
+        [ObservableProperty]
+        public Chart myObservableChart;
+
+        List<ChartEntry> chartEntries = new List<ChartEntry>();
+        Random random = new Random();
+
+
+        public StatisticsViewModel()
         {
-            Entries = entries
-        };
+            if (Globals.MyArts != null) addCharacterToChartList();
+        }
 
-        MyObservableChart = myChart;
+
+        private void addCharacterToChartList()
+        {
+            Dictionary<string, int> yearCounts = new Dictionary<string, int>();
+
+            foreach (Art art in Globals.MyArts)
+            {
+                string year = art.Year;
+                if (yearCounts.ContainsKey(year))
+                {
+                    yearCounts[year]++;
+                }
+                else
+                {
+                    yearCounts[year] = 1;
+                }
+            }
+
+            List<ChartEntry> chartEntries = new List<ChartEntry>();
+            foreach (var id in yearCounts)
+            {
+                SKColor randomColor = new SKColor((byte)random.Next(0, 256), (byte)random.Next(0, 256), (byte)random.Next(0, 256));
+                ChartEntry entry = new ChartEntry(id.Value)
+                {
+                    Label = id.Key,
+                    ValueLabel = id.Value.ToString(),
+                    Color = randomColor
+                };
+                chartEntries.Add(entry);
+            }
+
+            MyObservableChart = new BarChart { Entries = chartEntries.ToArray() };
+
+        }
     }
-    
 }
-

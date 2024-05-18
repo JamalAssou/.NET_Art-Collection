@@ -3,7 +3,7 @@
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"             
              xmlns:viewmodel="clr-namespace:MyApp.ViewModel"           
              xmlns:model="clr-namespace:MyApp.Model"
-             Title="Version 1.0"
+             Title="Version 2.0"
              x:Class="MyApp.View.MainPage">
 
     <ScrollView>
@@ -38,10 +38,10 @@
                         Padding="25,10"
                         BackgroundColor="#F7A711" TextColor="#1A3F6B"
                         IsEnabled="{Binding IsNotBusy}"/>
-                <Button Text="Show Statistics" 
-                        Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MainViewModel}}, Path=ShowStatisticsCommand}"
+                <Button Text="Show Statistics"
+                        Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MainViewModel}}, Path=GoToStatisticsCommand}"
                         HorizontalOptions="Center"
-                        BorderWidth="1"             
+                        BorderWidth="1"
                         FontAttributes="Bold" 
                         FontSize="25" 
                         FontFamily="MuseoSansRounded300"
@@ -58,9 +58,23 @@
                         Padding="25,10"
                         BackgroundColor="#F7A711" TextColor="#1A3F6B"
                         IsEnabled="{Binding IsNotBusy}"/>
+                <Button Text="DB" 
+                        Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MainViewModel}}, Path=DBCallCommand}"
+                        HorizontalOptions="Center"
+                        BorderWidth="2" 
+                        BackgroundColor="Transparent" BorderColor="Green" TextColor="Green"
+                        IsEnabled="{Binding IsNotBusy}"/>
+                <Button
+                        Text="Login" 
+                        Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MainViewModel}}, Path=LoginCallCommand}"
+                        HorizontalOptions="Center"
+                        BorderWidth="2" 
+                        BackgroundColor="Transparent" BorderColor="Green" TextColor="Green"
+                        IsEnabled="{Binding IsNotBusy}"/>
             </StackLayout>
             <StackLayout HorizontalOptions="CenterAndExpand">
                 <Label Text="{Binding CodeBar}" />
+                <Label Text="{Binding UserId}" /><!--Pour afficher l'user id -> debug -->
             </StackLayout>
 
             <CollectionView ItemsSource="{Binding MyObservableArts}"

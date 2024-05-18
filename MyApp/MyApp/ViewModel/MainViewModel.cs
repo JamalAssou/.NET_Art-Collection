@@ -15,17 +15,32 @@ public partial class MainViewModel : BaseViewModel
     public ObservableCollection<Art> MyObservableArts { get; } = new();
     DeviceOrientationService myScanner;
 
+    private readonly DataAccesServices DBService;
+    [ObservableProperty]
+    private int userId;
+
     [ObservableProperty]
     string? codeBar;
 
-    public MainViewModel()
+    public MainViewModel(DataAccesServices dBService)
     {
         this.myScanner = new DeviceOrientationService();
         myScanner.ConfigureScanner();
         myScanner.SerialBuffer.Changed += OnBarCodeScanned;
         LoadPossibleArtsCollection(); // On charge les elements qui peuvent etre scanné depuis le fichier Json 
+
+        //on recuper l'id de l'user connecté
+        DBService = dBService;
+        LoadUserArts();
     }
 
+    private void DeleteUserArts()
+    {
+        if (UserId != 0)
+        {
+            DBService.DeleteUserArts(UserId);
+        }
+    }
     private async Task LoadPossibleArtsCollection()
     {      
         JSONServices MyService = new();
@@ -46,6 +61,11 @@ public partial class MainViewModel : BaseViewModel
         {
             MyObservableArts.Add(art);
         }
+        //DeleteUserArts(); -> pour supprimer tout les art de l'user connecter.
+
+        UserId = LoginViewModel.LoggedInUserId; // Utilisez l'ID de l'utilisateur stocké;-> on le rajoute ici sinon l'id vaudra toujours 0 car il sera appaler uniquement dans le constructeur
+        LoadUserArts();//on appel la methode ici car on veut qu'a chaque retour sur la page, les nouvelle element apparaissent 
+
     }
 
     private async void OnBarCodeScanned(object sender, EventArgs args)
@@ -71,7 +91,17 @@ public partial class MainViewModel : BaseViewModel
     private async Task AddArt()
     {
         IsBusy = true;
-        await Shell.Current.GoToAsync("AddArt", true);
+        UserId = LoginViewModel.LoggedInUserId; // Utilisez l'ID de l'utilisateur stocké
+
+        if (UserId != 0)
+        {
+            await Shell.Current.GoToAsync("AddArt", true);
+        }
+        else
+        {
+            await Shell.Current.DisplayAlert("Error!", "You're not logged in", "OK");
+
+        }
         IsBusy = false;
     }
 
@@ -98,10 +128,40 @@ public partial class MainViewModel : BaseViewModel
 
 
     [RelayCommand]
-    private async Task ShowStatistics()
+    private async Task GoToStatistics()
     {
         IsBusy = true;
-        await Shell.Current.GoToAsync("Statistics", true);
+        if (MyObservableArts.Count != 0)
+        {
+            await Shell.Current.GoToAsync("Statistics", true);
+        }else
+        {
+            await Shell.Current.DisplayAlert("Error!", "No statistic to display because there's no art", "OK");
+
+        }
+
+        IsBusy = false;
+    }
+
+    //DB
+    [RelayCommand]
+    private async Task DBCall()
+    {
+        IsBusy = true;
+
+        await Shell.Current.GoToAsync("DbPage", true);
+
+        IsBusy = false;
+    }
+    
+    //Login Call
+    [RelayCommand]
+    private async Task LoginCall()
+    {
+        IsBusy = true;
+
+        await Shell.Current.GoToAsync("LoginPage", true);
+
         IsBusy = false;
     }
 
@@ -121,6 +181,34 @@ public partial class MainViewModel : BaseViewModel
         }
 
         IsBusy = false;
+    }
+
+    private void LoadUserArts()
+    {
+        if (UserId == 0)
+        {
+            return;
+        }
+
+        List<ArtCollectionModel> userArts = DBService.artCollections
+            .Where(p => p.UserId == UserId)
+            .ToList();
+
+        MyObservableArts.Clear();
+        foreach (var item in userArts)
+        {
+            MyObservableArts.Add(new Art
+            {
+                Id = item.Id_Art,
+                Title = item.Name,
+                Description = item.Description,
+                Picture = item.Picture,
+                Price = item.Price,
+                Author = item.Author,
+                Year = item.Year
+                // Mappez les autres propriétés si nécessaire
+            });
+        }
     }
 
 }

@@ -1,13 +1,27 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:model="clr-namespace:MyApp.Model"
-             xmlns:viewmodel="clr-namespace:MyApp.ViewModel"  
              xmlns:micro="clr-namespace:Microcharts.Maui;assembly=Microcharts.Maui"
+             xmlns:viewmodel="clr-namespace:MyApp.ViewModel"
              x:Class="MyApp.View.Statistics">
-    <Grid ColumnDefinitions="*,auto,*" RowDefinitions="*,auto,*">
-        <Grid Grid.Row="2">
-            <micro:ChartView Chart="{Binding MyObservableChart}"/>
-        </Grid>
-    </Grid>
+    <ContentPage.BindingContext>
+        <viewmodel:StatisticsViewModel />
+    </ContentPage.BindingContext>
+    <VerticalStackLayout Padding="20">
+        <Frame Grid.Row="0"
+               BackgroundColor="#F7A711"
+               CornerRadius="5"
+               Margin="0,0,0,30"
+               Padding="10">
+            <Label Text="Statistics"
+                   TextColor="#1A3F6B"
+                   HorizontalOptions="Center"
+                   VerticalOptions="CenterAndExpand"
+                   FontSize="Large"
+                   FontFamily="MuseoSansRounded300"
+                   FontAttributes="Bold"/>
+        </Frame>
+        <micro:ChartView  Chart="{Binding MyObservableChart}" HeightRequest="645"/>
+
+    </VerticalStackLayout>
 </ContentPage>
