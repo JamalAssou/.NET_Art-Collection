@@ -26,6 +26,14 @@ namespace MyApp.ViewModel
         [RelayCommand]
         private async Task Login()
         {
+
+            // Vérifiez si les champs Email et Password sont vides
+            if (string.IsNullOrEmpty(Email) || string.IsNullOrEmpty(Password))
+            {
+                await Shell.Current.DisplayAlert("Error!", "Email and Password cannot be empty !", "OK");
+                return;
+            }
+
             IsBusy = true;
 
             var user = DBService.Users.FirstOrDefault(u => u.Email == Email && u.Password == Password);
@@ -40,7 +48,7 @@ namespace MyApp.ViewModel
             else
             {
                 // Affichez un message d'erreur
-                await Shell.Current.DisplayAlert("Error!", "Invalid email or password", "OK");
+                await Shell.Current.DisplayAlert("Error!", "Invalid email or password !", "OK");
             }
 
             IsBusy = false;

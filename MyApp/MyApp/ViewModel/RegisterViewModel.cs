@@ -29,8 +29,28 @@ namespace MyApp.ViewModel
 
 
         [RelayCommand]
+        private async Task BackToLogin()
+        {
+            IsBusy = true;
+            await Shell.Current.GoToAsync("LoginPage", true); // pour retourner sur la page d'accueil
+            IsBusy = false;
+        }
+
+
+        [RelayCommand]
         private async Task Register()
         {
+
+            // Vérifiez si les champs Email et Password sont vides
+            if (string.IsNullOrEmpty(Email) || string.IsNullOrEmpty(Password))
+            {
+                await Shell.Current.DisplayAlert("Error!", "Email and Password cannot be empty !", "OK");
+                return;
+            } else
+            {
+                await Shell.Current.GoToAsync("LoginPage", true); // pour retourner sur la page d'accueil
+            }
+
             IsBusy = true;
 
             JSONServices MyService = new();
@@ -48,13 +68,12 @@ namespace MyApp.ViewModel
                 DBService.SaveChanges();
             }catch (Exception ex)
             {
-                Shell.Current.DisplayAlert("Error!", "erreur dans la sauvegarde de base de données"+ex, "OK");
+                Shell.Current.DisplayAlert("Error!", "Error saving to database: " + ex, "OK");
             }
 
-            Temp = ""+Email;//debug
-
-            Console.WriteLine(user.Email);
-            await Shell.Current.GoToAsync("LoginPage", true); // pour retourner sur la page d'accueil
+            // debug
+            // Temp = ""+Email; 
+            // Console.WriteLine(user.Email);
 
             IsBusy = false;
 

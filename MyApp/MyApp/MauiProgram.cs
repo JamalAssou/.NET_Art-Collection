@@ -36,10 +36,6 @@ namespace MyApp
             builder.Services.AddTransient<AddArt>();
             builder.Services.AddTransient<AddArtViewModel>();
 
-            //route pour la page de DB
-            builder.Services.AddTransient<DBViewModel>();
-            builder.Services.AddTransient<DbPage>();
-
             builder.Services.AddTransient<Statistics>();
             builder.Services.AddTransient<StatisticsViewModel>();
 

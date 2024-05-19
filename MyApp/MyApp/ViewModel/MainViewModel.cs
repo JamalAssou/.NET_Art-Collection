@@ -34,13 +34,15 @@ public partial class MainViewModel : BaseViewModel
         LoadUserArts();
     }
 
-    private void DeleteUserArts()
+    // méthode pour supprimer tous les enregistrements des arts du compte
+     /* private void DeleteUserArts()
     {
         if (UserId != 0)
         {
             DBService.DeleteUserArts(UserId);
         }
-    }
+    }*/
+
     private async Task LoadPossibleArtsCollection()
     {      
         JSONServices MyService = new();
@@ -61,11 +63,10 @@ public partial class MainViewModel : BaseViewModel
         {
             MyObservableArts.Add(art);
         }
-        //DeleteUserArts(); -> pour supprimer tout les art de l'user connecter.
+
+        // DeleteUserArts(); // -> pour supprimer tout les art de l'user connecter.
 
         UserId = LoginViewModel.LoggedInUserId; // Utilisez l'ID de l'utilisateur stocké;-> on le rajoute ici sinon l'id vaudra toujours 0 car il sera appaler uniquement dans le constructeur
-        LoadUserArts();//on appel la methode ici car on veut qu'a chaque retour sur la page, les nouvelle element apparaissent 
-
     }
 
     private async void OnBarCodeScanned(object sender, EventArgs args)
@@ -81,9 +82,25 @@ public partial class MainViewModel : BaseViewModel
             {
                 Globals.MyArts.Add(Art);
                 await MyService.SetArts();
+
+                var newArt = new ArtCollectionModel
+                {
+                    Name = Art.Title,
+                    Description = Art.Description,
+                    Author = Art.Author,
+                    Year = Art.Year,
+                    Picture = Art.Picture,
+                    Price = Art.Price,
+                    UserId = UserId
+                };
+
+                DBService.artCollections.Add(newArt);
+                DBService.SaveChanges();
+
                 MyObservableArts.Add(Art);
             }
         }
+
     }
 
 
@@ -99,7 +116,7 @@ public partial class MainViewModel : BaseViewModel
         }
         else
         {
-            await Shell.Current.DisplayAlert("Error!", "You're not logged in", "OK");
+            await Shell.Current.DisplayAlert("Error!", "You must be logged in to add art", "OK");
 
         }
         IsBusy = false;
@@ -122,7 +139,17 @@ public partial class MainViewModel : BaseViewModel
     private async Task OpenExportArt()
     {
         IsBusy = true;
-        await Shell.Current.GoToAsync("ExportArt", true);
+
+        if (MyObservableArts.Count != 0)
+        {
+            await Shell.Current.GoToAsync("ExportArt", true);
+        }
+        else
+        {
+            await Shell.Current.DisplayAlert("Error!", "There is no art to export", "OK");
+
+        }
+
         IsBusy = false;
     }
 
@@ -143,18 +170,7 @@ public partial class MainViewModel : BaseViewModel
         IsBusy = false;
     }
 
-    //DB
-    [RelayCommand]
-    private async Task DBCall()
-    {
-        IsBusy = true;
-
-        await Shell.Current.GoToAsync("DbPage", true);
-
-        IsBusy = false;
-    }
     
-    //Login Call
     [RelayCommand]
     private async Task LoginCall()
     {
@@ -170,12 +186,24 @@ public partial class MainViewModel : BaseViewModel
     private async Task LoadJSON()
     {   
         IsBusy = true;
-        JSONServices MyService = new();
+        // JSONServices MyService = new();
 
-        await MyService.GetArts();
+        // await MyService.GetArts();
         MyObservableArts.Clear();
 
-        foreach(var art in Globals.MyArts) 
+        UserId = LoginViewModel.LoggedInUserId; // Utilisez l'ID de l'utilisateur stocké
+
+        if (UserId != 0)
+        {
+            LoadUserArts(); //on appel la methode ici car on veut qu'a chaque retour sur la page, les nouvelle element apparaissent 
+        }
+        else
+        {
+            await Shell.Current.DisplayAlert("Error!", "You must be logged in to view your art", "OK");
+
+        }
+
+        foreach (var art in Globals.MyArts) 
         {
             MyObservableArts.Add(art);
         }
@@ -206,7 +234,6 @@ public partial class MainViewModel : BaseViewModel
                 Price = item.Price,
                 Author = item.Author,
                 Year = item.Year
-                // Mappez les autres propriétés si nécessaire
             });
         }
     }

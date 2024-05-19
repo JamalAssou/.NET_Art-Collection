@@ -11,14 +11,10 @@
             Routing.RegisterRoute(nameof(ExportArt), typeof(ExportArt));
             Routing.RegisterRoute(nameof(AddArt), typeof(AddArt));
             Routing.RegisterRoute(nameof(Statistics), typeof(Statistics));
-            //db
-            Routing.RegisterRoute(nameof(DbPage), typeof(DbPage));
-
             //LoginPage
             Routing.RegisterRoute(nameof(LoginPage), typeof(LoginPage));
             // RegisterPage
             Routing.RegisterRoute(nameof(RegisterPage), typeof(RegisterPage));
-
 
         }
     }

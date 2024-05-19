@@ -15,7 +15,6 @@ namespace MyApp.ViewModel
 {
     public partial class AddArtViewModel : BaseViewModel
     {
-       // public ObservableCollection<ArtCollectionModel> MyPersonalObservableArt { get; } = new();
 
         private DataAccesServices DBService;
         private int userId;
@@ -24,8 +23,6 @@ namespace MyApp.ViewModel
         {
             DBService = dBService;
             this.userId = LoginViewModel.LoggedInUserId; // Utilisez l'ID de l'utilisateur stocké;
-
-            //LoadUserArts();
 
         }
 
@@ -71,6 +68,7 @@ namespace MyApp.ViewModel
             await MyService.SetArts();
             await MyService.SetPossibleArtsCollection();*/
 
+            // pour stocker dans la db
             var newArt = new ArtCollectionModel
             {
                 Name = Title,
@@ -84,30 +82,27 @@ namespace MyApp.ViewModel
 
             DBService.artCollections.Add(newArt);
             DBService.SaveChanges();
+
+            // pour stocker dans la liste globale
+            Art myArt = new Art();
+            myArt.Id = cptId;
+            myArt.Title = Title;
+            myArt.Author = Author;
+            myArt.Year = Year;
+            myArt.Description = Description;
+            myArt.Picture = Picture;
+            myArt.Price = Price;
+
+            cptId++;
+
+            Globals.MyArts.Add(myArt);
+            Globals.PossibleArtsCollection.Add(myArt);
+
             await Shell.Current.GoToAsync("//MainPage", true); // pour retourner sur la page d'accueil
 
             IsBusy = false;
 
         }
-
-        /*private void LoadUserArts()
-        {
-            if (userId == 0)
-            {
-                // Gérer le cas où l'utilisateur n'est pas connecté ou l'ID de l'utilisateur est introuvable
-                return;
-            }
-
-            List<ArtCollectionModel> userArts = DBService.artCollections
-                .Where(p => p.UserId == userId)
-                .ToList();
-
-            MyPersonalObservableArt.Clear();
-            foreach (var item in userArts)
-            {
-                MyPersonalObservableArt.Add(item);
-            }
-        }*/
 
     }
 }

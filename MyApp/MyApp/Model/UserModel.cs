@@ -14,10 +14,6 @@ namespace MyApp.Model
         public string Password { get; set; } = string.Empty;
         public List<ArtCollectionModel> artCollections { get; set;}
 
-        internal static object FindFirst(string nameIdentifier)
-        {
-            throw new NotImplementedException();
-        }
     }
 
     public class ArtCollectionModel

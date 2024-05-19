@@ -1,5 +1,7 @@
 ﻿using System.IO.Ports;
 using System.Management;
+using System.Linq;
+using Microsoft.Maui.Controls;
 
 namespace MyApp.Service;
 

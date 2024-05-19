@@ -3,15 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MyApp.View.RegisterPage"
              xmlns:viewmodel="clr-namespace:MyApp.ViewModel"           
-             xmlns:model="clr-namespace:MyApp.Model"
-             Title="RegisterPage">
+             xmlns:model="clr-namespace:MyApp.Model">
     <StackLayout Padding="20">
         <Frame Grid.Row="0"
            BackgroundColor="#F7A711"
            CornerRadius="5"
            Margin="0,0,0,30"
            Padding="10">
-            <Label Text="Register Page"
+            <Label Text="Register"
                TextColor="#1A3F6B"
                HorizontalOptions="Center"
                VerticalOptions="CenterAndExpand"
@@ -21,20 +20,36 @@
         </Frame>
 
         <Entry Placeholder="Email" FontFamily="MuseoSansRounded300" Text="{Binding Email}" x:Name="Email" Margin="0,0,0,10"/>
-        <Entry Placeholder="Password" FontFamily="MuseoSansRounded300" Text="{Binding Password}" x:Name="Password" Margin="0,0,0,10"/>
-        
-        <Button Text="Register" 
-            Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:RegisterViewModel}}, Path=RegisterCommand}"
-            HorizontalOptions="Center"
-            VerticalOptions="End"
-            BorderWidth="1" 
-            FontAttributes="Bold" 
-            FontSize="20" 
-            Margin="0,20,0,0"
-            FontFamily="MuseoSansRounded300"
-            Padding="25,10"
-            BackgroundColor="#F7A711" BorderColor="Transparent" TextColor="#1A3F6B"
-            IsEnabled="{Binding IsNotBusy}"/>
+        <Entry Placeholder="Password" FontFamily="MuseoSansRounded300" Text="{Binding Password}" x:Name="Password" Margin="0,0,0,10" IsPassword="True"/>
+
+        <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
+            <Button Text="Register" 
+                    Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:RegisterViewModel}}, Path=RegisterCommand}"
+                    HorizontalOptions="Center"
+                    VerticalOptions="End"
+                    BorderWidth="1" 
+                    FontAttributes="Bold" 
+                    FontSize="20" 
+                    Margin="0,20,0,0"
+                    FontFamily="MuseoSansRounded300"
+                    Padding="25,10"
+                    BackgroundColor="#F7A711" BorderColor="Transparent" TextColor="#1A3F6B"
+                    IsEnabled="{Binding IsNotBusy}"/>
+
+            <Button Text="Already have an acccount ?" 
+                    Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:RegisterViewModel}}, Path=BackToLoginCommand}"
+                    HorizontalOptions="Center"
+                    VerticalOptions="End"
+                    BorderWidth="1" 
+                    FontAttributes="Bold" 
+                    FontSize="20" 
+                    Margin="0,20,0,0"
+                    FontFamily="MuseoSansRounded300"
+                    Padding="25,10"
+                    BackgroundColor="#F7A711" BorderColor="Transparent" TextColor="#1A3F6B"
+                    IsEnabled="{Binding IsNotBusy}"/>
+        </HorizontalStackLayout>
+
         <Label Text="{Binding Temp}" />
     </StackLayout>
 
